@@ -1027,7 +1027,7 @@ table.cmp td.acc{color:#000;font-weight:400}
       <div><div class="modal-k">American Commerce Capital</div><div class="modal-t hn">Check your <span class="mk">eligibility.</span></div><div class="modal-s hn">About 2 minutes. No bank details. No obligation.</div></div>
       <button class="modal-x" data-close aria-label="Close"><span></span><span></span></button>
     </div>
-    <form class="form hn" id="applyForm" novalidate>
+    <form class="form hn" id="applyForm" novalidate><div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="acc_website">Website</label><input id="acc_website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
     <div class="prog" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
     <div class="stage on" data-s="1">
       <h3>The basics</h3><p class="hint">Enough to tell whether ACC is likely to be a fit.</p>
@@ -1058,7 +1058,7 @@ table.cmp td.acc{color:#000;font-weight:400}
         <div><label>Preferred contact</label><div class="opts" data-name="contact"><button type="button">Phone</button><button type="button">Email</button></div></div>
       </div>
       <div class="err" id="err3">Please complete all fields with a valid email and phone.</div>
-      <div class="fnav"><button type="button" class="pill ok" data-prev="2">Back</button><div style="text-align:right"><button type="submit" class="pill k">Check My Eligibility</button><div class="fine" style="margin-top:10px;max-width:none">By submitting, you agree that American Commerce Capital may contact you by phone, email, or text about your application. Message and data rates may apply. You can opt out at any time.</div></div></div>
+      <div class="fnav"><button type="button" class="pill ok" data-prev="2">Back</button><div style="text-align:right"><button type="submit" class="pill k" id="applySubmit">Check My Eligibility</button><div class="fine" style="margin-top:10px;max-width:none">By submitting, you agree that American Commerce Capital may contact you by phone, email, or text about your application. Message and data rates may apply. You can opt out at any time.</div></div></div>
     </div>
     <div class="stage done" data-s="4">
       <div class="okring"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></div>
@@ -1225,7 +1225,31 @@ function go(n){stages.forEach(function(s){s.classList.toggle('on',+s.dataset.s==
 function valid(n){if(n===1)return data.amount&&data.revenue&&data.tib;if(n===2)return data.use&&form.industry.value;if(n===3)return form.business.value.trim()&&form.name.value.trim()&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email.value)&&form.phone.value.replace(/\D/g,'').length>=10&&data.contact;return true}
 form.querySelectorAll('[data-next]').forEach(function(b){b.addEventListener('click',function(){var cur=+b.closest('.stage').dataset.s;if(valid(cur))go(+b.dataset.next);else document.getElementById('err'+cur).style.display='block'})});
 form.querySelectorAll('[data-prev]').forEach(function(b){b.addEventListener('click',function(){go(+b.dataset.prev)})});
-form.addEventListener('submit',function(e){e.preventDefault();if(!valid(3)){document.getElementById('err3').style.display='block';return}document.getElementById('doneContact').textContent=(data.contact||'your preferred method').toLowerCase();/* [DEV] POST data to CRM here */go(4)});
+/* ---- send the lead to the ACC CRM (POST /api/intake/lead, consent site-v1) ---- */
+var INTAKE_URL='https://portal.americancommercecapital.com/api/intake/lead',sending=false,subId=null;
+function uuid(){if(window.crypto&&crypto.randomUUID)return crypto.randomUUID();return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0;return(c==='x'?r:(r&3|8)).toString(16)})}
+function buildLead(){var q=new URLSearchParams(location.search),u={},m={source:'utm_source',medium:'utm_medium',campaign:'utm_campaign',content:'utm_content',term:'utm_term',campaignId:'utm_id'};
+ Object.keys(m).forEach(function(k){var v=q.get(m[k]);if(v)u[k]=v.slice(0,200)});
+ var p={amount:data.amount,revenue:data.revenue,tib:data.tib,use:data.use,industry:form.industry.value,
+  business:form.business.value.trim(),name:form.name.value.trim(),email:form.email.value.trim(),phone:form.phone.value.trim(),
+  contact:data.contact,consent:true,consentVersion:'site-v1',submissionId:subId,
+  landingPage:location.href.slice(0,1000),submittedAt:new Date().toISOString(),website:form.website.value};
+ if(Object.keys(u).length)p.utm=u; if(document.referrer)p.referrer=document.referrer.slice(0,1000); return p}
+function sendErr(msg){var e=document.getElementById('err3');e.textContent=msg;e.style.display='block'}
+form.addEventListener('submit',function(e){e.preventDefault();if(sending)return;
+ if(!valid(3)){sendErr('Please complete all fields with a valid email and phone.');return}
+ var btn=document.getElementById('applySubmit'),label=btn.textContent;
+ if(!subId)subId=uuid();                 /* same id on retries, so a lead is never stored twice */
+ sending=true;btn.disabled=true;btn.textContent='Sending\u2026';document.getElementById('err3').style.display='none';
+ var done=function(){sending=false;btn.disabled=false;btn.textContent=label};
+ var ctl=window.AbortController?new AbortController():null,t=setTimeout(function(){if(ctl)ctl.abort()},15000);
+ fetch(INTAKE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(buildLead()),signal:ctl?ctl.signal:undefined})
+ .then(function(r){clearTimeout(t);done();
+   if(r.status===201){document.getElementById('doneContact').textContent=(data.contact||'your preferred method').toLowerCase();subId=null;go(4);return}
+   if(r.status===429){sendErr('Too many attempts from this connection. Please wait a few minutes and try again.');return}
+   if(r.status===422){sendErr('Some details could not be accepted. Please check your email and phone and try again.');return}
+   sendErr('We could not send your application just now. Please try again in a moment.')})
+ .catch(function(){clearTimeout(t);done();sendErr('We could not send your application just now. Please check your connection and try again.')})});
 })();
 </script>
 <script>
