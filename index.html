@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
+<html lang="en" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1138,6 +1138,58 @@ html[data-intro][data-theme][data-rise] .hero{position:relative;top:auto}
 @media(max-width:767px){html[data-intro][data-theme][data-hero=photo] .hero .pin{background-color:#fff!important}html[data-intro][data-theme][data-hero=photo] .hero{background:#fff}}
 
 </style>
+<style id="film-midi">
+/* ===== video section, Midi layout. Remove data-film from <html> to restore "Capital, in 40 seconds" above the film. ===== */
+.film .fx,.film .fxq{display:none}
+@media(min-width:981px){
+html[data-film] .film{padding:clamp(96px,8.4vw,132px) 1.5vw 0;overflow:hidden}
+html[data-film] .film .wrap{max-width:none;position:relative;display:grid;grid-template-columns:minmax(0,34fr) minmax(0,66fr);column-gap:3vw;align-items:start;padding-bottom:clamp(120px,11vw,170px)}
+html[data-film] .film .top{display:none}
+html[data-film] .film .fx{display:block;padding:1.2vw 0 0 1.3vw;color:#fff}
+html[data-film] .film .fx h2{font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;font-stretch:72%;font-weight:800;text-transform:none;font-size:clamp(44px,4.5vw,74px);line-height:1;letter-spacing:-.015em;color:#fff;text-wrap:balance}
+html[data-film] .film .fx p{margin-top:1.6vw;max-width:30em;font-stretch:100%;font-weight:500;font-size:clamp(18px,1.72vw,27px);line-height:1.18;letter-spacing:-.02em;color:#fff}
+html[data-film] .film .fxb{display:inline-flex;align-items:center;height:48px;margin-top:2.6vw;padding:0 22px;border:0;border-radius:13px;background:#E664B4;color:#17150f;font-stretch:100%;font-size:16px;font-weight:500;letter-spacing:-.02em;cursor:pointer;transition:background .2s}
+html[data-film] .film .fxb:hover{background:#D44C9C}
+html[data-film] .film .fxb::after{content:"\2192";display:inline-block;width:0;margin-left:0;opacity:0;overflow:hidden;transition:width .25s,margin-left .25s,opacity .2s}
+html[data-film] .film .fxb:hover::after{width:1.05em;margin-left:.45em;opacity:1}
+html[data-film] .film .slot{grid-column:2;grid-row:1;box-shadow:none;border-radius:22px}
+html[data-film] .film .fxq{display:block;position:absolute;z-index:5;right:-1.5vw;bottom:0;width:38.2vw;margin:0;padding:3vw 3.2vw 2.6vw 2.9vw;background:#EDEDE3;color:#17150f;border-radius:26px 0 0 0;transition:opacity .35s,transform .35s}
+html[data-film] .film .fxq i{display:block;height:.52em;font-family:Georgia,'Times New Roman',serif;font-style:normal;font-weight:700;font-size:6.4vw;line-height:1;color:#E664B4}
+html[data-film] .film .fxq blockquote{margin:.5vw 0 0;font-stretch:100%;font-weight:600;font-size:clamp(17px,1.62vw,26px);line-height:1.2;letter-spacing:-.025em}
+html[data-film] .film .fxq figcaption{margin-top:1.3vw;font-family:'ACC Mono',ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.02em;text-transform:uppercase;color:rgba(23,21,15,.7)}
+html[data-film] .film .slot.playing~.fxq{opacity:0;pointer-events:none;transform:translateY(16px)}
+/* 2: quote card sits under the text, nothing covers the film */
+html[data-film="2"] .film .wrap{padding-bottom:clamp(72px,6.4vw,104px)}
+html[data-film="2"] .film .fx{grid-column:1;grid-row:1}
+html[data-film="2"] .film .fxq{position:static;grid-column:1;grid-row:2;width:auto;margin:2.6vw 0 0 1.3vw;border-radius:22px;padding:2vw 2.2vw 1.9vw}
+html[data-film="2"] .film .fxq i{font-size:4.6vw}
+html[data-film="2"] .film .fxq blockquote{font-size:clamp(15px,1.3vw,21px)}
+html[data-film="2"] .film .slot{grid-row:1/span 2;align-self:start}
+html[data-film="2"] .film .slot.playing~.fxq{opacity:1;transform:none;pointer-events:auto}
+/* 3: text left and quote card right on top, film full width below */
+html[data-film="3"] .film .wrap{grid-template-columns:minmax(0,1fr) 38.2vw;row-gap:3.4vw;padding-bottom:clamp(72px,6.4vw,104px)}
+html[data-film="3"] .film .fx{grid-column:1;grid-row:1}
+html[data-film="3"] .film .fxq{position:static;grid-column:2;grid-row:1;align-self:end;width:auto;border-radius:22px;padding:2.2vw 2.4vw 2vw}
+html[data-film="3"] .film .fxq i{font-size:4.6vw}
+html[data-film="3"] .film .slot{grid-column:1/-1;grid-row:2;margin:0 1.3vw}
+html[data-film="3"] .film .slot.playing~.fxq{opacity:1;transform:none;pointer-events:auto}
+}
+@media(max-width:980px){
+html[data-film][data-fmob] .film{padding-bottom:56px}
+html[data-film][data-fmob] .film .top{display:none}
+html[data-film][data-fmob] .film .fx{display:block;color:#fff}
+html[data-film][data-fmob] .film .fx h2{font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;font-stretch:72%;font-weight:800;text-transform:none;font-size:min(12.4vw,64px);line-height:1;letter-spacing:-.015em;color:#fff;text-wrap:balance}
+html[data-film][data-fmob] .film .fx p{margin-top:16px;font-stretch:100%;font-weight:500;font-size:19px;line-height:1.22;letter-spacing:-.02em;color:#fff}
+html[data-film][data-fmob] .film .fxb{display:flex;align-items:center;justify-content:center;height:54px;margin-top:24px;border-radius:14px;background:#E664B4;color:#17150f;font-stretch:100%;font-size:16px;font-weight:500;letter-spacing:-.02em}
+html[data-film][data-fmob] .film .slot{margin:30px -18px 0;border-radius:0;box-shadow:none;aspect-ratio:16/9}
+html[data-film][data-fmob="b"] .film .slot{aspect-ratio:1/1}
+html[data-film][data-fmob="c"] .film .slot{aspect-ratio:4/5}
+html[data-film][data-fmob] .film .fxq{display:block;margin:22px 0 0;padding:22px 22px 20px;background:#EDEDE3;color:#17150f;border-radius:20px}
+html[data-film][data-fmob] .film .fxq i{display:block;height:.52em;font-family:Georgia,'Times New Roman',serif;font-style:normal;font-weight:700;font-size:64px;line-height:1;color:#E664B4}
+html[data-film][data-fmob] .film .fxq blockquote{margin:8px 0 0;font-stretch:100%;font-weight:600;font-size:19px;line-height:1.22;letter-spacing:-.025em}
+html[data-film][data-fmob] .film .fxq figcaption{margin-top:14px;font-family:'ACC Mono',ui-monospace,Menlo,monospace;font-size:12px;line-height:1.4;letter-spacing:.02em;text-transform:uppercase;color:rgba(23,21,15,.7)}
+}
+</style>
 </head>
 <body>
 
@@ -1214,9 +1266,11 @@ html[data-intro][data-theme][data-rise] .hero{position:relative;top:auto}
 
 <!-- ================= ACC FILM (play card) ================= -->
 <section class="film" id="film" aria-label="The ACC film"><div class="wrap">
+<div class="fx"><h2>A company you can actually talk to</h2><p>ACC was built the other way around: an answer in seconds, funding in 24 hours, and a person who picks up.</p><a class="fxb" href="#people">Speak with a Capital Specialist</a></div>
+
   <div class="top"><h2 class="hn"><span class="hl">Capital,<br>in <span>40 seconds.</span></span></h2><p>See how American Commerce Capital works, from application to funding.</p></div>
   <div class="slot" id="filmSlot"><video id="accFilm" playsinline preload="metadata" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" poster="acc-film.jpg" src="acc-film.mp4"></video><div class="play" aria-hidden="true"><svg viewBox="0 0 24 28"><path d="M0 0l24 14L0 28z" fill="#000"/></svg></div><div class="dur">The ACC film · 0:40</div><div class="vol" id="filmVol"><button type="button" class="mute" aria-label="Mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor" stroke="none"/><path class="w1" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="w2" d="M19 5a10 10 0 0 1 0 14"/><path class="x" d="M16 9l6 6M22 9l-6 6"/></svg></button><input type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume"></div></div>
-</div></section>
+<figure class="fxq"><i aria-hidden="true">&ldquo;</i><blockquote>We needed inventory ahead of the season. The terms were explained line by line, and paying early was exactly what they said it would be.</blockquote><figcaption>Robert Callahan · Callahan Hardware · Pennsylvania</figcaption></figure></div></section>
 
 <!-- ================= INDUSTRIES + WORRIES (black, right after the hero) ================= -->
       <!-- 2 / WHO WE ARE: industries orbit -->
