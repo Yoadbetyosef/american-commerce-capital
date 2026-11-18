@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-hero="plain" data-nav="clear" data-font="cg" data-theme data-rise data-fl data-rhl>
+<html lang="en" data-hero="plain" data-navbar="full" data-font="cg" data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -937,15 +937,41 @@ html[data-theme][data-rise][data-fl] .film h2 .hl span{color:inherit;background:
 html[data-theme][data-rise][data-rhl] .film h2 .hl span{color:var(--rise-acc,inherit);background:none}
 @media(max-width:767px){html[data-theme][data-rise] .hero{height:100vh;height:100svh}html[data-theme][data-rise] .film{margin-top:0;padding-top:56px;background:var(--rise-bg,var(--bg-dark))}}
 </style>
+<style id="navbar">
+/* ===== top bar in dark glass with links and two buttons. Restore the pill: swap data-navbar="full" for data-nav="clear" on <html>. ===== */
+html[data-navbar]{--nbtn:#E664B4;--nbtn-h:#D44C9C;--nalt-h:#F2B5DD;--nlink:#606AF6}
+html[data-navbar] nav.top,html[data-navbar] nav.top.dark,html[data-navbar] nav.top.dark.lime{top:0;left:0;right:auto;width:100%!important;margin:0!important;max-width:none!important;height:76px;transform:none;border:0;border-radius:0 0 26px 26px;background:rgba(38,37,33,.72)!important;-webkit-backdrop-filter:blur(22px) saturate(1.25);backdrop-filter:blur(22px) saturate(1.25);color:#fff!important;padding:0 14px 0 30px;display:flex;align-items:center;justify-content:flex-start;gap:18px;box-shadow:none;pointer-events:auto}
+html[data-navbar=float] nav.top,html[data-navbar=float] nav.top.dark,html[data-navbar=float] nav.top.dark.lime{top:12px;left:12px;width:calc(100% - 24px)!important;border-radius:24px}
+html[data-navbar] nav.top .brand{font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;font-stretch:72%;font-weight:900;font-size:25px;letter-spacing:-.02em;line-height:.88;text-transform:uppercase;white-space:nowrap}
+html[data-navbar] nav.top .brand span{display:none}
+html[data-navbar] nav.top .nlinks{display:flex;align-items:center;gap:2px;font-size:16px;font-weight:500;letter-spacing:-.02em;text-transform:none;white-space:nowrap}
+html[data-navbar] nav.top .nlinks a{display:inline-flex;align-items:center;height:52px;padding:0 16px;border:2px solid transparent;border-radius:16px;transition:border-color .2s,background .2s}
+html[data-navbar] nav.top .nlinks a:hover,html[data-navbar] nav.top .nlinks a:focus-visible{border-color:var(--nlink);background:rgba(255,255,255,.13);outline:0}
+html[data-navbar] nav.top .r{margin-left:auto;gap:10px;padding-right:0}
+html[data-navbar] nav.top .navalt,html[data-navbar] nav.top .navcta{position:static;transform:none;display:inline-flex;align-items:center;height:52px;padding:0 20px;border-radius:15px;font-size:16px;font-weight:500;letter-spacing:-.02em;text-transform:none;white-space:nowrap;transition:background .2s,color .2s}
+html[data-navbar] nav.top .navalt::after,html[data-navbar] nav.top .navcta::after{content:"\2192";display:inline-block;width:0;margin-left:0;opacity:0;overflow:hidden;transition:width .25s,margin-left .25s,opacity .2s}
+html[data-navbar] nav.top .navalt:hover::after,html[data-navbar] nav.top .navcta:hover::after{width:1.05em;margin-left:.45em;opacity:1}
+html[data-navbar] nav.top .navalt{border:2px solid var(--nbtn);color:#fff}
+html[data-navbar] nav.top .navalt:hover{background:var(--nalt-h)}
+html[data-navbar] nav.top .navcta,html[data-navbar] nav.top.dark.lime .navcta{background:var(--nbtn);color:#17150f}
+html[data-navbar] nav.top .navcta:hover,html[data-navbar] nav.top.dark .navcta:hover{background:var(--nbtn-h);color:#17150f}
+html[data-navbar] nav.top .burger{display:none}
+html:not([data-navbar]) nav.top .nlinks,html:not([data-navbar]) nav.top .navalt{display:none}
+@media(max-width:1180px){html[data-navbar] nav.top .nlinks{font-size:15px}html[data-navbar] nav.top .nlinks a{padding:0 11px}html[data-navbar] nav.top .brand{font-size:21px}}
+@media(max-width:980px){html[data-navbar] nav.top .nlinks,html[data-navbar] nav.top .navalt{display:none}html[data-navbar] nav.top .burger{display:flex;margin:0 10px 0 6px}}
+@media(max-width:767px){html[data-navbar] nav.top,html[data-navbar] nav.top.dark,html[data-navbar] nav.top.dark.lime{height:62px;padding:0 6px 0 14px;border-radius:0 0 20px 20px;gap:8px}html[data-navbar=float] nav.top,html[data-navbar=float] nav.top.dark,html[data-navbar=float] nav.top.dark.lime{top:8px;left:8px;width:calc(100% - 16px)!important;border-radius:18px}html[data-navbar] nav.top .brand{font-size:15px!important;letter-spacing:-.02em!important}html[data-navbar] nav.top .r{gap:6px}html[data-navbar] nav.top .burger{margin:0 8px 0 4px;width:24px}html[data-navbar] nav.top .navcta{display:inline-flex;height:40px;padding:0 11px;font-size:13px;border-radius:12px}html[data-navbar] nav.top .navcta::after{display:none}}
+@media(max-width:389px){html[data-navbar] nav.top .brand{font-size:12.5px!important}html[data-navbar] nav.top .navcta{padding:0 9px;font-size:12.5px}html[data-navbar] nav.top,html[data-navbar] nav.top.dark,html[data-navbar] nav.top.dark.lime{padding-left:11px}}
+</style>
 </head>
 <body>
 
 <!-- ================= NAVBAR ================= -->
 <nav class="top">
   <a class="t brand" href="#top">AMERICAN COMMERCE CAPITAL <span>©</span></a>
+  <div class="nlinks"><a href="#how">How it works</a><a href="#industries">Industries</a><a href="#why">Why ACC</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></div>
   <div class="t c a"><div>CAPITAL FOR</div><div>AMERICAN BUSINESS</div></div>
   <div class="t c b"><div>FAST DECISIONS, CLEAR TERMS</div><div>&amp; REAL PEOPLE</div></div>
-  <div class="r"><a class="navcta" href="#apply">Check Eligibility</a><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+  <div class="r"><a class="navalt" href="partners.html">Partners</a><a class="navcta" href="#apply">Check Eligibility</a><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
 </nav>
 <div class="menu" id="menu" aria-hidden="true">
   <div class="bg"></div>
