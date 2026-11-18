@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-hero="photo" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-font="cg" data-theme data-rise data-fl data-rhl>
+<html lang="en" data-hero="photo" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1706,5 +1706,119 @@ var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeou
  v.addEventListener('ended',function(){started=false;slot.classList.remove('playing');v.currentTime=0;});
  new IntersectionObserver(function(es){es.forEach(function(e){inView=e.isIntersecting;if(!started)return;if(inView&&v.paused)v.play();else if(!inView&&!v.paused)v.pause();});},{threshold:.1}).observe(slot);
 })();
-</script></body>
+</script>
+<!-- hero carousel card + Ask ACC (remove data-hcard on <html> to restore the claims card) -->
+<style id="hcar-css">
+html[data-hcard] .heroc .bottom>.cap,html[data-hcard] .heroc .bottom>.brcard{display:none}
+.hcar{display:none}
+html[data-hcard] .hcar{display:block;position:relative;color:#17150f;font-stretch:100%}
+@media(min-width:768px){
+ html[data-hero=photo][data-hcard] .heroc{padding:96px 1.5vw 5.6vw 1.5vw;gap:2vw}
+ html[data-hero=photo][data-hcard] .heroc .bottom{width:clamp(380px,35vw,600px);padding:2vw 1.7vw 1.65vw;gap:0;border-radius:clamp(22px,2vw,30px)}
+ html[data-hero=photo][data-hcard] .heroc .title h1{font-size:min(10.65vw,25vh);line-height:.78}
+ html[data-hero=photo][data-hcard] .heroc .title{margin-bottom:.35vw}
+}
+.hcar .q{font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;font-stretch:72%;font-weight:700;font-size:clamp(24px,2.5vw,42px);line-height:1;letter-spacing:-.01em;margin:0;padding-right:clamp(76px,6.4vw,104px);min-height:2em;text-transform:none;color:#17150f}
+.hcar .a{margin-top:.7vw;font-size:clamp(13px,1.1vw,17px);line-height:1.35;letter-spacing:-.02em;color:rgba(23,21,15,.72);min-height:1.35em}
+.hcar .nav{position:absolute;right:0;top:0;display:flex;gap:clamp(8px,.85vw,12px)}
+.hcar .nav button{width:clamp(26px,2.1vw,34px);height:clamp(26px,2.1vw,34px);border-radius:7px;border:2px solid rgba(23,21,15,.2);background:#F6F6EF;color:#17150f;display:grid;place-items:center;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.hcar .nav button svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hcar .nav button:hover{border-color:rgba(23,21,15,.45)}
+.hcar .nav button:active,.hcar .nav button.on,.hcar .nav button:focus-visible{border-color:#606AF6;background:#E7E9FF;color:#3b44d6;outline:0}
+.hcar .lab2{margin:1.5vw 0 .9vw;font-family:'ACC Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.02em;text-transform:uppercase;color:#17150f}
+.hcar .tl3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.1vw,16px)}
+.hcar .tile2{position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#E3E3DA center/cover no-repeat;transition:opacity .35s}
+.hcar .tile2 b{position:absolute;left:5px;right:5px;bottom:5px;padding:6px 8px;border-radius:10px;background:rgba(237,237,227,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-size:clamp(12.5px,1.12vw,16px);line-height:1.15;font-weight:700;letter-spacing:-.02em;color:#17150f;text-align:center}
+.hcar.sw .q,.hcar.sw .a,.hcar.sw .tile2{opacity:0}
+.hcar .q,.hcar .a{transition:opacity .25s}
+.hcar .extra{display:none;margin-top:1.1vw}
+html[data-hcard=b] .hcar .extra,html[data-hcard=c] .hcar .extra{display:block}
+.hcar .chips{display:none;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+html[data-hcard=c] .hcar .chips{display:flex}
+.hcar .chips span{font-size:13px;font-weight:600;letter-spacing:-.02em;padding:6px 11px;border-radius:999px;background:#fff;border:1px solid rgba(23,21,15,.14)}
+.hcar .go{display:flex;align-items:center;justify-content:center;height:clamp(46px,3.7vw,54px);border-radius:14px;background:#E664B4;color:#17150f;font-size:16px;font-weight:500;letter-spacing:-.02em;transition:background .2s}
+.hcar .go:hover{background:#D44C9C}
+.hcar .dots{display:none}
+.hcar .dots i{width:18px;height:3px;border-radius:2px;background:rgba(23,21,15,.2)}
+.hcar .dots i.on{background:#606AF6}
+@media(max-width:767px){
+ html[data-hero=photo][data-hcard] .heroc{padding:0 18px 22px}
+ html[data-hero=photo][data-hcard] .heroc .title{height:calc(63.8svh - 20px);padding:0 1px 0}
+ html[data-hero=photo][data-hcard] .heroc .title h1{font-size:15.2vw!important;line-height:.8}
+ html[data-hero=photo][data-hcard] .heroc .bottom{width:100%;margin-top:20px;padding:22px 20px 20px;border-radius:26px}
+ .hcar .q{font-size:7.1vw;padding-right:0;margin-right:74px;min-height:2em}
+ .hcar .a{margin-top:8px;font-size:14px}
+ .hcar .nav button{width:27px;height:27px}
+ .hcar .nav{gap:10px}
+ .hcar .lab2{margin:16px 0 10px;font-size:12px}
+ .hcar .tl3{gap:9px}
+ .hcar .extra{margin-top:14px}
+ .hcar .go{height:50px}
+ .hcar .tile2 b{font-size:12.5px;padding:6px 6px;left:4px;right:4px;bottom:4px;border-radius:10px}
+}
+/* Ask ACC */
+#askacc{position:fixed;z-index:58;right:1.5vw;bottom:1.45vw;display:inline-flex;align-items:center;gap:9px;height:clamp(42px,3.45vw,50px);padding:0 16px 0 13px;border-radius:12px;border:2px solid rgba(23,21,15,.2);background:#fff;color:#17150f;font:700 16px/1 'ACC Grotesk','Helvetica Neue',Arial,sans-serif;letter-spacing:-.02em;cursor:pointer;box-shadow:0 10px 30px -12px rgba(0,0,0,.35);transition:border-color .15s,background .15s}
+#askacc svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#askacc:hover,#askacc.open{border-color:#606AF6;background:#F3F4FF}
+#askpan{position:fixed;z-index:59;right:1.5vw;bottom:calc(1.45vw + 60px);width:min(380px,calc(100vw - 24px));max-height:min(560px,calc(100vh - 190px));display:none;flex-direction:column;background:#EDEDE3;color:#17150f;border-radius:24px;box-shadow:0 30px 80px -24px rgba(0,0,0,.5);overflow:hidden;font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;letter-spacing:-.02em}
+#askpan.open{display:flex}
+#askpan .hd{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 12px;font-weight:700;font-size:18px}
+#askpan .hd button{width:34px;height:34px;border-radius:10px;border:2px solid rgba(23,21,15,.2);background:#F6F6EF;cursor:pointer;font-size:16px;line-height:1;color:#17150f}
+#askpan .hd button:hover{border-color:#606AF6}
+#askpan .log{flex:1;overflow:auto;padding:4px 18px 10px;display:flex;flex-direction:column;gap:8px}
+#askpan .m{max-width:88%;padding:10px 13px;border-radius:16px;font-size:15px;line-height:1.4}
+#askpan .m.bot{align-self:flex-start;background:#fff;border-bottom-left-radius:6px}
+#askpan .m.me{align-self:flex-end;background:#606AF6;color:#fff;border-bottom-right-radius:6px}
+#askpan .qs{padding:8px 18px 12px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid rgba(23,21,15,.12)}
+#askpan .qs button{font:inherit;font-size:13.5px;padding:8px 12px;border-radius:999px;border:2px solid rgba(23,21,15,.18);background:#F6F6EF;color:#17150f;cursor:pointer;text-align:left}
+#askpan .qs button:hover{border-color:#606AF6;background:#E7E9FF}
+#askpan .ft{display:flex;gap:8px;padding:0 18px 16px}
+#askpan .ft a{flex:1;display:flex;align-items:center;justify-content:center;height:46px;border-radius:13px;font-size:15px;font-weight:500}
+#askpan .ft a.p{background:#E664B4;color:#17150f}#askpan .ft a.p:hover{background:#D44C9C}
+#askpan .ft a.s{border:2px solid #17150f;color:#17150f}
+@media(max-width:767px){#askacc{right:12px;bottom:78px;height:44px;font-size:15px;padding:0 14px 0 11px}#askpan{right:12px;bottom:130px}}
+</style>
+<button id="askacc" type="button" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L4 20l1.2-4.3A8.4 8.4 0 1 1 21 11.5z"/></svg>Ask ACC</button>
+<div id="askpan" role="dialog" aria-label="Ask ACC"><div class="hd"><span>Ask ACC</span><button type="button" id="askx" aria-label="Close">✕</button></div><div class="log" id="asklog"></div><div class="qs" id="askqs"></div><div class="ft"><a class="p" href="#apply">Check your eligibility</a><a class="s" href="tel:+12015550148">Call a specialist</a></div></div>
+<script>
+(function(){
+ var IMG={"coins": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184907_1985c54a-d022-45cf-90f2-8a082c092045.png", "clock": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184906_64f2950c-6f1f-4eb3-954e-0d062aabf85a.png", "lock": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184906_81744ca9-043b-42a0-9452-ad12522c00f0.png", "stopwatch": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184905_bce25914-0d09-4de9-aad0-a6f40b079dbb.png", "hourglass": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184906_7eea3c12-0cfd-4f19-801c-700e51da4b64.png", "phone": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184906_c43c8600-0659-48e9-9e3a-5a55e3a923f3.png", "spring": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184905_4345b55d-3ca4-418d-bb88-134dcc80146a.png", "cake": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184948_a5c9f4c2-9f75-4398-b317-0d9efc176b3a.png", "tape": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184948_290b259c-7706-4f9b-80c4-62e818f6e7ff.png", "calc": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184947_1504b598-552a-484f-a46e-1ebcb59a0687.png", "piggy": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184947_eab953a6-fac8-4b97-b25b-965a887ca318.png", "headset": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184947_8b5d442a-e44a-4693-8dde-106aacc09bb3.png", "telephone": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184947_8967322b-3949-4b93-a2ef-94b5d0049eb7.png", "laptop": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184947_1b1d7b3a-e6aa-42d7-8ce4-3722569c65ea.png", "keys": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_183836_00652e24-e585-4edb-ab1e-d13ec496e5d9.png", "gears": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_183833_53b67309-2e1a-4313-80d8-6dbda8d95989.png", "clipboard": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_183836_13af661a-8415-410d-a756-fabdf63c6b68.png", "card": "https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261118_184905_f0e85e5d-13d6-42c0-ba74-607e453a8433.png"};
+ var L='With ACC:';
+ var S=[
+  {q:'\u201cMy credit isn\u2019t great.\u201d',a:'We don\u2019t check it. We look at how your business performs.',l:L,t:[['No credit check','card'],['Revenue & cash flow','coins'],['Time in business','clock']]},
+  {q:'\u201cI won\u2019t risk my house.\u201d',a:'No collateral. No guarantee. Nothing personal is put on the line.',l:L,t:[['No collateral','keys'],['No personal guarantee','lock'],['No lien on equipment','gears']]},
+  {q:'\u201cThe bank took two months.\u201d',a:'As little as 24 hours. Decided fast, not in weeks.',l:L,t:[['Answer in seconds','stopwatch'],['Funded in 24 hours','hourglass'],['Apply in 2 minutes','phone']]},
+  {q:'\u201cWhat if sales slow down?\u201d',a:'Payments can flex. Choose a payment tied to a share of your sales.',l:L,t:[['Payments that flex','spring'],['A share of your sales','cake'],['Built around cash flow','tape']]},
+  {q:'\u201cI hate hidden fees.\u201d',a:'All of it, in writing. Amount, cost and payments before you sign.',l:L,t:[['Total cost in dollars','calc'],['Every fee listed','clipboard'],['No application fees','piggy']]},
+  {q:'\u201cI\u2019ll just be a number.\u201d',a:'A real person. A named Capital Specialist you can call.',l:L,t:[['A named specialist','headset'],['A real phone call','telephone'],['One portal','laptop']]}];
+ var R=document.documentElement,bottom=document.querySelector('.heroc .bottom'),c=document.createElement('div');c.className='hcar';
+ c.innerHTML='<div class="nav"><button type="button" data-d="-1" aria-label="Previous"><svg viewBox="0 0 14 14"><path d="M9 2 4 7l5 5"/></svg></button><button type="button" data-d="1" aria-label="Next"><svg viewBox="0 0 14 14"><path d="M5 2l5 5-5 5"/></svg></button></div><p class="q"></p><p class="a"></p><div class="lab2"></div><div class="tl3"><div class="tile2"><b></b></div><div class="tile2"><b></b></div><div class="tile2"><b></b></div></div><div class="dots"></div><div class="extra"><div class="chips"><span>$25K – $1M</span><span>Funded in as little as 24 hours</span><span>No credit check</span></div><a class="go" href="#apply">Check Your Eligibility</a></div>';
+ bottom.appendChild(c);
+ var i=0,timer=null,dots=c.querySelector('.dots');S.forEach(function(){dots.appendChild(document.createElement('i'))});
+ function paint(){var s=S[i];c.querySelector('.q').textContent=s.q;c.querySelector('.a').textContent=s.a;c.querySelector('.lab2').textContent=s.l;
+  [].forEach.call(c.querySelectorAll('.tile2'),function(el,k){el.style.backgroundImage=IMG[s.t[k][1]]?'url("'+IMG[s.t[k][1]]+'")':'none';el.querySelector('b').textContent=s.t[k][0]});
+  [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i)})}
+ function go(d){c.classList.add('sw');setTimeout(function(){i=(i+d+S.length)%S.length;paint();c.classList.remove('sw');pre(i+1)},230)}
+ function auto(){clearInterval(timer);timer=setInterval(function(){go(1)},7000)}
+ [].forEach.call(c.querySelectorAll('.nav button'),function(b){b.onclick=function(){[].forEach.call(c.querySelectorAll('.nav button'),function(x){x.classList.remove('on')});b.classList.add('on');go(+b.dataset.d);auto()}});
+ c.addEventListener('mouseenter',function(){clearInterval(timer)});c.addEventListener('mouseleave',auto);
+ function pre(k){S[(k+S.length)%S.length].t.forEach(function(t){if(IMG[t[1]]){var im=new Image();im.src=IMG[t[1]]}})}setTimeout(function(){pre(1)},2500);
+ paint();auto();
+ /* Ask ACC: answers are the site's own FAQ text */
+ var QA=[['How much can I qualify for?','It depends on revenue, time in business, and the right structure. ACC provides business capital from $25,000 to $1,000,000. Checking eligibility is the fastest way to know.'],
+  ['How fast is funding?','Our engine gives an answer in seconds. Once you approve the terms, capital is in your account in as little as 24 hours.'],
+  ['Does applying affect my credit?','No. There is no credit check. We evaluate how the business performs.'],
+  ['Do I need collateral?','No. ACC funding is unsecured. We do not take a lien on your equipment, inventory, or property.'],
+  ['What does it cost?','It depends on the structure and the business. Before you accept, you see the total obligation in dollars, every fee, and how payments work. There are no application fees and no hidden fees.'],
+  ['What happens after I apply?','A Capital Specialist reviews your application and contacts you the way you chose. You get the options that may be available, explained. Nothing is funded without your written approval.']];
+ var btn=document.getElementById('askacc'),pan=document.getElementById('askpan'),log=document.getElementById('asklog'),qs=document.getElementById('askqs');
+ function msg(t,k){var m=document.createElement('div');m.className='m '+k;m.textContent=t;log.appendChild(m);log.scrollTop=log.scrollHeight}
+ msg('Hi. Pick a question and I’ll give you the straight answer.','bot');
+ QA.forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x[0];b.onclick=function(){msg(x[0],'me');setTimeout(function(){msg(x[1],'bot')},350)};qs.appendChild(b)});
+ function tog(v){pan.classList.toggle('open',v);btn.classList.toggle('open',v);btn.setAttribute('aria-expanded',v)}
+ btn.onclick=function(){tog(!pan.classList.contains('open'))};document.getElementById('askx').onclick=function(){tog(false)};
+ pan.querySelector('.ft a.p').addEventListener('click',function(){tog(false)});
+})();
+</script>
+</body>
 </html>
