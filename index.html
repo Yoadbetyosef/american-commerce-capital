@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-hero="plain" data-nav="clear" data-font="cg" data-theme>
+<html lang="en" data-hero="plain" data-nav="clear" data-font="cg" data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -920,6 +920,23 @@ html[data-theme] .heroc .proof .st svg,html[data-theme][data-hero=plain] .heroc 
 html[data-theme] .stars{color:var(--star)}
 html[data-theme] nav.top .navcta,html[data-theme] .pill.b,html[data-theme] .pill.w{background:var(--ctabg);color:var(--ctafg)}
 </style>
+<style id="rise">
+/* ===== the section after the hero climbs over the pinned hero (rounded sheet). Remove data-rise from <html> to restore the fade-to-black hand-off. ===== */
+html[data-theme][data-rise] .hero{position:sticky;top:0;height:100vh;height:100svh;z-index:0}
+html[data-theme][data-rise] #heroBlack{display:none}
+html[data-theme][data-rise] .film{margin-top:0;z-index:6;background:var(--rise-bg,var(--bg-dark));color:var(--rise-h,var(--paper));border-radius:var(--rise-r,30px) var(--rise-r,30px) 0 0;box-shadow:0 -24px 60px rgba(0,0,0,.18);padding-top:clamp(72px,8vw,120px)}
+html[data-theme][data-rise]{--rise-bg:#A0BAD2;--rise-h:#fff;--rise-hl:#95BAE8;--rise-r:0px;--rise-play:#E664B4}
+html[data-theme][data-rise] .film .play{background:var(--rise-play,var(--mk))}
+html[data-theme][data-rise] .film h2 .hl{color:inherit;background:var(--rise-hl,transparent);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:.06em .14em 0}
+html[data-theme][data-rise] .film h2 .hl span{color:var(--rise-acc,var(--mk));background:none}
+html[data-theme][data-rise] .film h2{letter-spacing:-.02em;line-height:.98}
+html[data-theme][data-rise] .film .top p{color:var(--rise-tx,color-mix(in srgb,var(--paper) 70%,transparent))}
+html[data-theme][data-rise][data-fl] .film{color:var(--rise-h,var(--ink))}
+html[data-theme][data-rise][data-fl] .film .top p{color:var(--rise-tx,color-mix(in srgb,var(--ink) 70%,transparent))}
+html[data-theme][data-rise][data-fl] .film h2 .hl span{color:inherit;background:linear-gradient(transparent 60%,var(--rise-acc,var(--mk)) 60%)}
+html[data-theme][data-rise][data-rhl] .film h2 .hl span{color:var(--rise-acc,inherit);background:none}
+@media(max-width:767px){html[data-theme][data-rise] .hero{height:100vh;height:100svh}html[data-theme][data-rise] .film{margin-top:0;padding-top:56px;background:var(--rise-bg,var(--bg-dark))}}
+</style>
 </head>
 <body>
 
@@ -992,7 +1009,7 @@ html[data-theme] nav.top .navcta,html[data-theme] .pill.b,html[data-theme] .pill
 
 <!-- ================= ACC FILM (play card) ================= -->
 <section class="film" id="film" aria-label="The ACC film"><div class="wrap">
-  <div class="top"><h2 class="hn">Capital,<br>in <span>40 seconds.</span></h2><p>See how American Commerce Capital works, from application to funding.</p></div>
+  <div class="top"><h2 class="hn"><span class="hl">Capital,<br>in <span>40 seconds.</span></span></h2><p>See how American Commerce Capital works, from application to funding.</p></div>
   <div class="slot" id="filmSlot"><video id="accFilm" playsinline preload="metadata" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" poster="acc-film.jpg" src="acc-film.mp4"></video><div class="play" aria-hidden="true"><svg viewBox="0 0 24 28"><path d="M0 0l24 14L0 28z" fill="#000"/></svg></div><div class="dur">The ACC film · 0:40</div><div class="vol" id="filmVol"><button type="button" class="mute" aria-label="Mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor" stroke="none"/><path class="w1" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="w2" d="M19 5a10 10 0 0 1 0 14"/><path class="x" d="M16 9l6 6M22 9l-6 6"/></svg></button><input type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume"></div></div>
 </div></section>
 
@@ -1318,8 +1335,8 @@ function applyPositions(p,px){
   if(MOB){first.style.filter='none';first.style.transform=sp>0?'scale('+(1-sp*.06)+')':'none';first.style.opacity=1-sp*.6}else{first.style.filter=sp>0?'blur('+(Math.sin(sp*Math.PI/2)*64)+'px)':'none'}
   var dp=clamp01((p-DRUM_START)/(1-DRUM_START));renderDrum(dp);if(v2&&v2.duration)t2=dp*v2.duration;
 }
-function onScroll(){var p=Math.min(1,Math.max(0,(window.scrollY-start)/(end-start)));if(v1.duration)t1=p*v1.duration;applyPositions(p,Math.max(0,window.scrollY-start))}
-var navEl=document.querySelector('nav.top');function toneUnderNav(){var y=40,L=[['film','black'],['hero',(document.documentElement.getAttribute('data-hero')==='plain'&&!document.documentElement.hasAttribute('data-hd')&&!(parseFloat((document.getElementById('heroBlack')||{style:{}}).style.opacity)>.5))?'light':'black'],['industries-orbit','black'],['bankband','lime'],['worries','black']];for(var k=0;k<L.length;k++){var el=document.getElementById(L[k][0]);if(!el)continue;var r=el.getBoundingClientRect();if(r.top<=y&&r.bottom>y)return L[k][1]}return 'light'}function navTone(){var t=toneUnderNav();navEl.classList.toggle('dark',!isOpen&&(t==='light'||t==='lime'));navEl.classList.toggle('lime',t==='lime')}window.addEventListener('scroll',function(){onScroll();navTone()},{passive:true});onScroll();navTone();
+function onScroll(){var p=document.documentElement.hasAttribute('data-rise')?0:Math.min(1,Math.max(0,(window.scrollY-start)/(end-start)));if(v1.duration)t1=p*v1.duration;applyPositions(p,Math.max(0,window.scrollY-start))}
+var navEl=document.querySelector('nav.top');function toneUnderNav(){var y=40,L=[['film',document.documentElement.hasAttribute('data-fl')?'light':'black'],['hero',(document.documentElement.getAttribute('data-hero')==='plain'&&!document.documentElement.hasAttribute('data-hd')&&!(parseFloat((document.getElementById('heroBlack')||{style:{}}).style.opacity)>.5))?'light':'black'],['industries-orbit','black'],['bankband','lime'],['worries','black']];for(var k=0;k<L.length;k++){var el=document.getElementById(L[k][0]);if(!el)continue;var r=el.getBoundingClientRect();if(r.top<=y&&r.bottom>y)return L[k][1]}return 'light'}function navTone(){var t=toneUnderNav();navEl.classList.toggle('dark',!isOpen&&(t==='light'||t==='lime'));navEl.classList.toggle('lime',t==='lime')}window.addEventListener('scroll',function(){onScroll();navTone()},{passive:true});onScroll();navTone();
 function showV1(){v1.style.opacity='1'}v1.addEventListener('loadeddata',showV1);v1.addEventListener('seeked',showV1);if(v1.readyState>=2)showV1();
 if(v2){function showV2(){v2.style.opacity='1';document.getElementById('loader2').classList.add('off')}v2.addEventListener('loadeddata',showV2);v2.addEventListener('seeked',showV2);if(v2.readyState>=2)showV2();
 v2.addEventListener('error',function(){document.getElementById('loader2').classList.add('off')});}
