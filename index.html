@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-theme data-rise data-fl data-rhl>
+<html lang="en" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1116,6 +1116,26 @@ html[data-wf="1"]{--wf-s:.34em;--wf-x:.1em}
 html[data-wf="2"]{--wf-s:.39em;--wf-x:.16em}
 html[data-wf="3"]{--wf-s:.45em;--wf-x:.22em}
 </style>
+<style id="intro-section">
+/* ===== white statement section after the hero. Remove data-intro from <html> and the blue section follows the hero directly again. ===== */
+.intro{display:none}
+html[data-intro] .intro{display:block;position:relative;z-index:6;background:#fff;color:#17150f;text-align:center;padding:clamp(64px,6.2vw,96px) 22px clamp(60px,5.6vw,88px)}
+html[data-intro] .intro p{margin:0 auto;max-width:min(1100px,56vw);font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;font-stretch:100%;font-weight:600;font-size:clamp(26px,2.6vw,44px);line-height:1.2;letter-spacing:-.03em;color:#17150f}
+html[data-intro] .intro .ipills{display:flex;flex-wrap:wrap;justify-content:center;gap:.36em;margin:.16em 0 .3em}
+html[data-intro] .intro .ipills b{display:inline-flex;align-items:center;height:1.32em;padding:0 .4em;border:.12em solid #17150f;border-radius:.4em;font-stretch:72%;font-weight:800;font-size:.9em;line-height:1;letter-spacing:-.01em;white-space:nowrap}
+html[data-intro] .intro .ibtns{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:clamp(40px,4.2vw,62px)}
+html[data-intro] .intro .ibtns a{display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:13px;font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;font-stretch:100%;font-size:16px;font-weight:500;letter-spacing:-.02em;text-transform:none;transition:background .2s,color .2s}
+html[data-intro] .intro .ibtns a::after{content:"\2192";display:inline-block;width:0;margin-left:0;opacity:0;overflow:hidden;transition:width .25s,margin-left .25s,opacity .2s}
+html[data-intro] .intro .ibtns a:hover::after{width:1.05em;margin-left:.45em;opacity:1}
+html[data-intro] .intro .ibtns .i1{background:#3B41AE;color:#fff;border:2px solid #3B41AE}
+html[data-intro] .intro .ibtns .i1:hover{background:#2e3496;border-color:#2e3496}
+html[data-intro] .intro .ibtns .i2{background:#fff;color:#17150f;border:2px solid #606AF6}
+html[data-intro] .intro .ibtns .i2:hover{background:#E7E9FF}
+@media(max-width:767px){html[data-intro] .intro{padding:54px 20px 56px}html[data-intro] .intro p{max-width:none;font-size:25px;line-height:1.26;text-wrap:balance}html[data-intro] .intro .ipills{gap:8px;margin:.3em 0 .4em}html[data-intro] .intro .ibtns{margin-top:34px;flex-direction:column;gap:10px}html[data-intro] .intro .ibtns a{height:54px;justify-content:center}}
+/* with the white section present the hero scrolls away normally (no climbing-over effect). Delete this rule to bring the climb back. */
+html[data-intro][data-theme][data-rise] .hero{position:relative;top:auto}
+
+</style>
 </head>
 <body>
 
@@ -1187,6 +1207,8 @@ html[data-wf="3"]{--wf-s:.45em;--wf-x:.22em}
   </div>
 </section>
 
+
+<section class="intro" id="intro" aria-label="What ACC does"><p>American Commerce Capital funds American businesses directly. Our Capital Specialists size your capital with <span class="ipills"><b>Fast decisions</b><b>Clear terms</b><b>Real people</b></span> built around you and your cash flow.</p><div class="ibtns"><a class="i1" href="#apply">Check your eligibility</a><a class="i2" href="#how">How ACC works</a></div></section>
 
 <!-- ================= ACC FILM (play card) ================= -->
 <section class="film" id="film" aria-label="The ACC film"><div class="wrap">
