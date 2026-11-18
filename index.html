@@ -1090,13 +1090,16 @@ html[data-hero=photo] .heroc .brcard .cta .pill.o{border:2px solid #17150f;color
 html[data-hero=photo] .heroc .brcard .cta .pill.o:hover{background:rgba(23,21,15,.07)}
 html[data-hero=photo] .heroc .brcard .cta small{display:block;align-self:center;color:rgba(23,21,15,.6)}
 @media(max-width:767px){
- html[data-hero=photo] .hero .pin{background-position:50% 50px,50% 50px!important}
- html[data-hero=photo] .heroc{padding:74px 12px 12px;flex-direction:column;align-items:stretch;justify-content:flex-end;gap:12px}
- html[data-hero=photo] .heroc .title{flex:none;min-height:0}
- html[data-hero=photo] .heroc .title h1{font-size:min(16vw,11vh)!important}
- html[data-hero=photo] .heroc .bottom{width:100%;padding:16px 16px 12px;border-radius:22px;gap:12px}
+ html[data-theme][data-hero=photo] .hero,html[data-theme][data-rise][data-hero=photo] .hero{position:relative!important;height:auto!important}
+ html[data-theme][data-hero=photo] .hero .pin{position:relative!important;height:auto!important;overflow:visible;background-size:auto 84svh,auto 84svh!important;background-position:50% 50px,50% 50px!important;background-color:#A0BAD2!important}
+ html[data-hero=photo] .first{position:relative;inset:auto}
+ html[data-hero=photo] .scrim{inset:0 0 auto 0;height:calc(84svh + 50px);background:linear-gradient(to top,rgba(0,0,0,.6) 0%,rgba(0,0,0,.2) 34%,rgba(0,0,0,0) 58%)}
+ html[data-hero=photo] .heroc{position:relative;inset:auto;display:block;padding:0 12px 22px;opacity:1!important;transform:none!important}
+ html[data-hero=photo] .heroc .title{display:flex;height:calc(61svh + 50px);min-height:0;align-items:flex-end;justify-content:flex-start;padding:0 4px 16px}
+ html[data-hero=photo] .heroc .title h1{font-size:16.5vw!important;line-height:.8}
+ html[data-hero=photo] .heroc .bottom{width:100%;padding:18px 16px 14px;border-radius:24px;gap:12px}
  html[data-hero=photo] .heroc .brcard{gap:10px;padding-top:12px}
- html[data-hero=photo] .heroc .brcard .cta .pill{height:50px}
+ html[data-hero=photo] .heroc .brcard .cta .pill{height:52px}
 }
 </style>
 </head>
