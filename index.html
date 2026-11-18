@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-hero="plain" data-navbar="full" data-font="cg" data-theme data-rise data-fl data-rhl>
+<html lang="en" data-hero="plain" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-font="cg" data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -959,21 +959,101 @@ html[data-navbar] nav.top .burger{display:none}
 html:not([data-navbar]) nav.top .nlinks,html:not([data-navbar]) nav.top .navalt{display:none}
 @media(max-width:1180px){html[data-navbar] nav.top .nlinks{font-size:15px}html[data-navbar] nav.top .nlinks a{padding:0 11px}html[data-navbar] nav.top .brand{font-size:21px}}
 @media(max-width:980px){html[data-navbar] nav.top .nlinks,html[data-navbar] nav.top .navalt{display:none}html[data-navbar] nav.top .burger{display:flex;margin:0 10px 0 6px}}
-@media(max-width:767px){html[data-navbar] nav.top,html[data-navbar] nav.top.dark,html[data-navbar] nav.top.dark.lime{height:62px;padding:0 6px 0 14px;border-radius:0 0 20px 20px;gap:8px}html[data-navbar=float] nav.top,html[data-navbar=float] nav.top.dark,html[data-navbar=float] nav.top.dark.lime{top:8px;left:8px;width:calc(100% - 16px)!important;border-radius:18px}html[data-navbar] nav.top .brand{font-size:15px!important;letter-spacing:-.02em!important}html[data-navbar] nav.top .r{gap:6px}html[data-navbar] nav.top .burger{margin:0 8px 0 4px;width:24px}html[data-navbar] nav.top .navcta{display:inline-flex;height:40px;padding:0 11px;font-size:13px;border-radius:12px}html[data-navbar] nav.top .navcta::after{display:none}}
-@media(max-width:389px){html[data-navbar] nav.top .brand{font-size:12.5px!important}html[data-navbar] nav.top .navcta{padding:0 9px;font-size:12.5px}html[data-navbar] nav.top,html[data-navbar] nav.top.dark,html[data-navbar] nav.top.dark.lime{padding-left:11px}}
+@media(max-width:767px){html[data-navbar] nav.top,html[data-navbar] nav.top.dark,html[data-navbar] nav.top.dark.lime{top:0!important;height:62px;padding:0 6px 0 14px!important;border-radius:0 0 20px 20px;gap:8px}html[data-navbar=float] nav.top,html[data-navbar=float] nav.top.dark,html[data-navbar=float] nav.top.dark.lime{top:8px!important;left:8px;width:calc(100% - 16px)!important;border-radius:18px}html[data-navbar] nav.top .brand{font-size:15px!important;letter-spacing:-.02em!important}html[data-navbar] nav.top .r{gap:6px}html[data-navbar] nav.top .burger{margin:0 8px 0 4px;width:24px}html[data-navbar] nav.top .navcta{display:inline-flex;height:40px;padding:0 11px;font-size:13px;border-radius:12px}html[data-navbar] nav.top .navcta::after{display:none}}
+@media(max-width:389px){html[data-navbar] nav.top .brand{font-size:12.5px!important}html[data-navbar] nav.top .navcta{padding:0 9px;font-size:12.5px}html[data-navbar] nav.top,html[data-navbar] nav.top.dark,html[data-navbar] nav.top.dark.lime{padding-left:11px!important}}
+</style>
+<style id="mobile-bar-menu">
+/* ===== phone bar + menu (white menu, divider list, big bottom button). Remove data-mmenu, data-mburger, data-mbrand from <html> to restore the previous ones. ===== */
+html[data-mmenu=white]{--mm-bg:#ffffff;--mm-fg:#17150f;--mm-line:rgba(0,0,0,.2)}
+html[data-mmenu=black]{--mm-bg:#0a0a0a;--mm-fg:#ffffff;--mm-line:rgba(255,255,255,.22)}
+html[data-mmenu=blue]{--mm-bg:#A0BAD2;--mm-fg:#ffffff;--mm-line:rgba(255,255,255,.5)}
+.menu .mmcta{display:none}
+@media(max-width:980px){
+ html[data-mburger=left] nav.top .r{display:contents}
+ html[data-mburger=left] nav.top .burger{order:-1;flex:none;width:26px;margin:0 6px 0 2px}
+ html[data-mburger=left] nav.top .navcta{margin-left:auto;margin-right:4px}
+ @media(max-width:767px){html[data-mburger=left] nav.top .brand{font-size:13.5px!important}html[data-mburger=left] nav.top,html[data-mburger=left] nav.top.dark,html[data-mburger=left] nav.top.dark.lime{padding-left:12px!important;gap:6px}}
+ html[data-mburger=left] nav.top,html[data-mburger=left] nav.top.dark,html[data-mburger=left] nav.top.dark.lime{padding-left:16px}
+ html[data-mmenu] .menu .bg{background:var(--mm-bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+ html[data-mmenu] .menu .in{padding:84px 22px 110px;justify-content:center}
+ html[data-mmenu] .menu .links{gap:0;border-top:1px solid var(--mm-line)}
+ html[data-mmenu] .menu .links a{padding:0;border-bottom:1px solid var(--mm-line)}
+ html[data-mmenu] .menu .links a span{font-size:27px;line-height:55px;font-weight:700;text-transform:none;letter-spacing:0;color:var(--mm-fg);translate:none}
+ html[data-mmenu] .menu .links a:hover span{color:var(--mm-fg);translate:none;opacity:.6}
+ html[data-mmenu] .menu .links a[href="#apply"],html[data-mmenu] .menu .foot{display:none}
+ html[data-mmenu] .menu .mmcta{display:flex;position:absolute;z-index:11;left:0;right:0;bottom:0;height:calc(92px + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);align-items:center;justify-content:center;gap:12px;background:var(--nbtn,#E664B4);color:#17150f;border-radius:28px 28px 0 0;font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;font-stretch:72%;font-weight:800;font-size:29px;letter-spacing:-.01em;transform:translateY(100%);transition:transform .5s cubic-bezier(.76,0,.24,1) .15s}
+ html[data-mmenu] .menu.open .mmcta{transform:none}
+ html[data-mmenu] nav.top:has(.burger.open),html[data-mmenu] nav.top.dark:has(.burger.open){background:transparent!important;-webkit-backdrop-filter:none;backdrop-filter:none;color:var(--mm-fg)!important}
+ html[data-mmenu] nav.top:has(.burger.open) .navcta{visibility:hidden}
+}
+nav.top .brand .bs,nav.top .navcta .s{display:none}
+nav.top .brand em,nav.top .brand b{font-style:normal;font-weight:inherit}
+@media(max-width:767px){
+ html[data-mbrand] nav.top .brand{display:block;line-height:.86!important}
+ html[data-mbrand=two] nav.top .brand{font-size:min(20px,4.9vw)!important;white-space:nowrap}
+ html[data-mbrand=two] nav.top .brand .bw:nth-of-type(2)::after{content:"\A";white-space:pre}
+ html[data-mbrand=three] nav.top .brand{font-size:19px!important}
+ html[data-mbrand=three] nav.top .brand .bw{display:block}
+ html[data-mbrand=acc] nav.top .brand .bw,html[data-mbrand=lock] nav.top .brand .bw{display:none}
+ html[data-mbrand=acc] nav.top .brand .bs{display:block;font-style:normal;font-size:44px;line-height:.8;letter-spacing:-.03em}
+ html[data-mbrand=lock] nav.top .brand{display:flex!important;flex-direction:column;gap:3px}
+ html[data-mbrand=lock] nav.top .brand .bs{display:block;font-style:normal;font-size:32px;line-height:.8;letter-spacing:-.03em}
+ html[data-mbrand=lock] nav.top .brand .bw{display:inline;font-size:8.5px;letter-spacing:.02em}
+ html[data-mbrand=lock] nav.top .brand .bl{display:block;white-space:nowrap;line-height:1}
+ html[data-mbrand=short] nav.top .brand{font-size:min(19px,4.9vw)!important}
+ html[data-mbrand=short] nav.top .navcta .l{display:none}html[data-mbrand=short] nav.top .navcta .s{display:inline}
+}
+</style>
+<style id="indorb-light">
+/* ===== "Capital for the people who keep ... moving" on light #EDEDE3. data-io="b" is live; remove data-io from <html> for the original black section. ===== */
+html[data-io=a]{--io-acc:#E664B4;--io-on:#17150f;--io-mark:#F2B5DD;--io-num:#E664B4}
+html[data-io=b]{--io-acc:#606AF6;--io-on:#ffffff;--io-mark:#95BAE8;--io-num:#606AF6}
+html[data-io=c]{--io-acc:#E664B4;--io-on:#17150f;--io-mark:#F2B5DD;--io-num:#E664B4}
+html[data-io=d]{--io-acc:#D6FF3F;--io-on:#17150f;--io-mark:#D6FF3F;--io-num:#17150f}
+html[data-theme][data-io] .indorb{background:#EDEDE3;color:#17150f}
+html[data-theme][data-io] .indorb h2{color:#17150f}
+html[data-theme][data-io] .indorb h2 .rot{color:var(--io-acc)}
+html[data-theme][data-io=b] .indorb h2 .rot span{color:#fff;background:#95BAE8;padding:0 .12em;margin-left:-.12em}
+html[data-theme][data-io=d] .indorb h2 .rot span{color:#17150f;background:linear-gradient(transparent 58%,#D6FF3F 58%)}
+html[data-theme][data-io] .indorb .icopy p{color:rgba(23,21,15,.74)}
+html[data-theme][data-io] .indorb .mk{color:inherit;font-weight:600;background:linear-gradient(transparent 58%,var(--io-mark) 58%);padding:0 .08em}
+html[data-theme][data-io] .indorb .iunder{color:rgba(23,21,15,.6)}
+/* light orbit (a, b, d) */
+html[data-theme][data-io]:not([data-io=c]) .indorb svg.arcs path{stroke:rgba(23,21,15,.16)}
+html[data-theme][data-io]:not([data-io=c]) .indorb .av{border-color:rgba(0,0,0,.14);background:#fff}
+html[data-theme][data-io]:not([data-io=c]) .indorb .pill{background:#fff;border-color:rgba(0,0,0,.14);color:#17150f}
+html[data-theme][data-io]:not([data-io=c]) .indorb .pill .ic{background:rgba(0,0,0,.07);color:#17150f}
+html[data-theme][data-io]:not([data-io=c]) .indorb .stats b{color:#17150f}
+html[data-theme][data-io]:not([data-io=c]) .indorb .stats b.mk{color:var(--io-num);background:none;padding:0}
+html[data-theme][data-io=d] .indorb .stats b.mk{background:linear-gradient(transparent 62%,#D6FF3F 62%)}
+html[data-theme][data-io]:not([data-io=c]) .indorb .stats span{color:rgba(23,21,15,.55)}
+/* dark card (c) */
+html[data-theme][data-io=c] .indorb .iorbit{background:#262521;border-radius:28px;padding:26px 0 20px;overflow:hidden}
+html[data-theme][data-io=c] .indorb .iunder{color:rgba(255,255,255,.6)}
+html[data-theme][data-io=c] .indorb .stats b.mk{color:var(--io-acc);background:none;padding:0}
+html[data-theme][data-io=c] .indorb .av,html[data-theme][data-io=c] .indorb .pill{background:#34332e}
+/* accents (all) */
+html[data-theme][data-io] .indorb .pill.on{background:var(--io-acc);border-color:var(--io-acc);color:var(--io-on)}
+html[data-theme][data-io] .indorb .pill.on .ic{background:var(--io-on);color:var(--io-acc)}
+html[data-theme][data-io] .indorb .status{background:var(--io-acc);color:var(--io-on)}
+html[data-theme][data-io] .indorb .status i{background:var(--io-on)}
+html[data-theme][data-io] .indorb .status i svg,html[data-theme][data-io] .indorb .check svg{stroke:var(--io-acc)}
+html[data-theme][data-io=d] .indorb .check svg{stroke:#17150f}
+html[data-theme][data-io] .indorb .check{background:color-mix(in srgb,var(--io-acc) 18%,transparent);border-color:color-mix(in srgb,var(--io-acc) 60%,transparent)}
 </style>
 </head>
 <body>
 
 <!-- ================= NAVBAR ================= -->
 <nav class="top">
-  <a class="t brand" href="#top">AMERICAN COMMERCE CAPITAL <span>©</span></a>
+  <a class="t brand" href="#top"><i class="bs">ACC</i><em class="bl"><b class="bw">AMERICAN</b> <b class="bw">COMMERCE</b> <b class="bw">CAPITAL</b></em> <span>©</span></a>
   <div class="nlinks"><a href="#how">How it works</a><a href="#industries">Industries</a><a href="#why">Why ACC</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></div>
   <div class="t c a"><div>CAPITAL FOR</div><div>AMERICAN BUSINESS</div></div>
   <div class="t c b"><div>FAST DECISIONS, CLEAR TERMS</div><div>&amp; REAL PEOPLE</div></div>
   <div class="r"><a class="navalt" href="partners.html">Partners</a><a class="navcta" href="#apply">Check Eligibility</a><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
 </nav>
 <div class="menu" id="menu" aria-hidden="true">
+  <a class="mmcta" href="#apply" onclick="document.getElementById('burger').click()">Check Eligibility <span aria-hidden="true">→</span></a>
   <div class="bg"></div>
   <div class="in">
     <div class="links">
