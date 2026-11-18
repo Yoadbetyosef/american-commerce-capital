@@ -1134,6 +1134,8 @@ html[data-intro] .intro .ibtns .i2:hover{background:#E7E9FF}
 @media(max-width:767px){html[data-intro] .intro{padding:54px 20px 56px}html[data-intro] .intro p{max-width:none;font-size:25px;line-height:1.26;text-wrap:balance}html[data-intro] .intro .ipills{gap:8px;margin:.3em 0 .4em}html[data-intro] .intro .ibtns{margin-top:34px;flex-direction:column;gap:10px}html[data-intro] .intro .ibtns a{height:54px;justify-content:center}}
 /* with the white section present the hero scrolls away normally (no climbing-over effect). Delete this rule to bring the climb back. */
 html[data-intro][data-theme][data-rise] .hero{position:relative;top:auto}
+/* phone: the strip under the hero photo matches the white section that follows (was the light blue of the film section). */
+@media(max-width:767px){html[data-intro][data-theme][data-hero=photo] .hero .pin{background-color:#fff!important}html[data-intro][data-theme][data-hero=photo] .hero{background:#fff}}
 
 </style>
 </head>
