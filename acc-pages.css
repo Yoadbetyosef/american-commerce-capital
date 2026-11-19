@@ -162,6 +162,8 @@ html[data-mx] .mxr .mxfeed:hover .mxtrack{animation-play-state:paused}
 html[data-mx] .mxr .mxtrack .q,html[data-mx] .mxr .mxtrack .q:first-of-type{padding:1.6vw 0;border-top:1px solid rgba(23,21,15,.14)}
 @keyframes mxfeed{to{transform:translateY(-50%)}}
 @media(prefers-reduced-motion:reduce){html[data-mx] .mxr .mxtrack{animation:none}}
+html[data-mx] .mxr .mxph{position:relative;overflow:hidden}
+html[data-mx] .mxr .mxvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 /* 4 faq */
 html[data-mx] .mxf .mxg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);gap:5vw;align-items:start}
 html[data-mx] .mxf .mxl{position:sticky;top:110px}
