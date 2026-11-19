@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-jr="w" data-jrvc="navy" data-botbar data-proof data-call="d" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
+<html lang="en" data-jr="w" data-jrvc="navy" data-jrk="p" data-botbar data-proof data-call="d" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1286,6 +1286,7 @@ html[data-jr] .jr .jrvid i{background:rgba(10,10,12,.5)}
 html[data-jr] .jr .jrdt,html[data-jr] .jr .jrdb{position:absolute;left:0;right:0;height:50.2%;background:var(--jr-bg);will-change:transform}
 html[data-jr] .jr .jrdt{top:0;transform:translateY(calc(var(--o,0)*-101%))}
 html[data-jr] .jr .jrdb{bottom:0;transform:translateY(calc(var(--o,0)*101%))}
+html[data-jr] .jr .jrbr{display:none}
 html[data-jr] .jr .jrbig{margin:0;font-stretch:62%;font-weight:900;font-size:var(--jrfs,14vw)!important;line-height:.8!important;letter-spacing:-.02em!important;text-transform:uppercase;white-space:nowrap;color:var(--jr-ink)}
 html[data-jr] .jr .jrl1{position:absolute;z-index:3;left:3.6vw;right:3.6vw;top:calc((1 - var(--o,0))*(50vh - var(--jrfs,14vw)*.8 - 1.6vh) + var(--o,0)*(76px + 2.4vh));transition:color .3s}
 html[data-jr] .jr.open .jrl1{color:#fff}
@@ -1326,33 +1327,12 @@ html[data-jr=s]:not([data-jrv=full]) .jr .jrcard{color:#17150f}
 html[data-jr][data-jrv=full] .jr .jrsub,html[data-jr][data-jrv=full] .jr .jrcard{display:none}
 html[data-jr][data-jrv=full] .jr .jrvid i{background:linear-gradient(0deg,rgba(10,10,12,.7) 0,rgba(10,10,12,.15) 45%,rgba(10,10,12,.55) 100%)}
 html[data-jr][data-jrv=full] .jr .jrbody{left:3.6vw;right:auto;width:44vw}
-@media(max-width:767px){
-html[data-jr] .jr .jrseq{height:520svh}
-html[data-jr] .jr .jrpin{height:100vh;height:100svh}
-html[data-jr] .jr .jrl1,html[data-jr] .jr .jrdb .jrbig{left:18px;right:18px}
-html[data-jr] .jr .jrl1{top:calc((1 - var(--o,0))*(50svh - var(--jrfs,14vw)*.8 - 10px) + var(--o,0)*78px)}
-html[data-jr] .jr .jrdb .jrbig{top:10px}
-html[data-jr] .jr .jrsub{left:18px;right:18px;max-width:none;top:calc(78px + var(--jrfs,14vw)*.8 + 22px);font-size:10.4vw}
-html[data-jr] .jr .jrcard{display:none}
-html[data-jr] .jr .jrbody{left:18px;right:18px;width:auto;bottom:86px;font-size:6.1vw}
-html[data-jr] .jr .jrp .jrin{left:18px;right:18px;top:78px;bottom:74px}
-html[data-jr] .jr .jrp .jrbig{font-size:var(--jrfs,14vw)!important}
-html[data-jr] .jr .jrslides{margin-top:18px}
-html[data-jr] .jr .jrs{display:block}
-html[data-jr] .jr .jrs .jrk{height:40vw;max-height:none;border-radius:18px;font-size:calc(var(--k,6.4vw)*2.5)}
-html[data-jr] .jr .jrs h3{margin-top:20px;font-size:9.6vw}
-html[data-jr] .jr .jrs p{margin-top:12px;font-size:16px}
-html[data-jr] .jr .jrs a{margin-top:16px;font-size:6.2vw}
-html[data-jr] .jr .jrtabs{gap:2px;margin-top:10px;flex-wrap:nowrap}
-html[data-jr] .jr .jrtabs button{padding:10px 8px;font-size:11.5px;white-space:nowrap}
-html[data-jr]:not([data-jrv=full]) .jr .jrc{left:18px;right:18px;width:auto;top:calc(78px + var(--jrfs,14vw)*.8 + 20px);bottom:auto}
-html[data-jr]:not([data-jrv=full]) .jr .jrsub{font-size:7.4vw}
-html[data-jr]:not([data-jrv=full]) .jr .jrbody{margin-top:calc((100vw - 36px)*.5625 + 34px);font-size:17px}
-html[data-jr]:not([data-jrv=full]) .jr .jrvid{left:18px;right:18px;top:calc(78px + var(--jrfs,14vw)*.8 + 20px + 14.8vw + 16px);bottom:auto;max-width:none;border-radius:16px}
-html[data-jr][data-jrv=full] .jr .jrbody{left:18px;right:18px;width:auto}
-html[data-jr]:not([data-jrv=full]) .jr .jrcard{display:block;margin-top:18px;padding:8px 18px;border-radius:18px}
-html[data-jr]:not([data-jrv=full]) .jr .jrcard div{gap:12px;padding:11px 0;font-size:15px}
-}
+/* stat cards with photographs. data-jrk="p": photo with the number on a full lime marker; "c": photo with a small lime chip. Remove data-jrk on <html> for the plain beige cards. */
+html[data-jr][data-jrk] .jr .jrs .jrk{background:#d9d9d4 var(--ki) center/cover no-repeat;align-items:flex-end;justify-content:flex-start;padding:1.3vw;text-align:left}
+html[data-jr][data-jrk] .jr .jrs .jrk span{background:#D6FF3F;color:#17150f;padding:.06em .16em .02em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+html[data-jr][data-jrk=p] .jr .jrs .jrk{font-size:calc(var(--k,6.4vw)*.72)}
+html[data-jr][data-jrk=c] .jr .jrs .jrk{align-items:flex-start;font-stretch:100%;font-weight:700;font-size:max(14px,1.25vw);letter-spacing:-.02em;line-height:1}
+html[data-jr][data-jrk=c] .jr .jrs .jrk span{padding:.5em .7em;border-radius:10px}
 /* recolouring the demo film live (no re-export). Remove data-jrvc on <html> for the original black film. */
 html[data-jr][data-jrvc] .jr .jrvid{isolation:isolate}
 html[data-jr][data-jrvc]:not([data-jrv=full]) .jr .jrvid i{display:block;background:var(--jrvt);mix-blend-mode:var(--jrvb,screen);pointer-events:none}
@@ -1363,6 +1343,38 @@ html[data-jr][data-jrvc=light] .jr{--jrvt:#EDEDE3;--jrvb:multiply}
 html[data-jr][data-jrvc=light] .jr .jrvid{background:#EDEDE3}
 html[data-jr][data-jrvc=sky] .jr .jrvid video{filter:invert(1) hue-rotate(180deg)}
 html[data-jr][data-jrvc=sky] .jr{--jrvt:#A0BAD2;--jrvb:multiply}
+@media(max-width:767px){
+/* phone: each giant line breaks in two, the tall 9:16 film sits in a full-width navy frame */
+html[data-jr] .jr{--jh:calc(var(--jrfs,20vw)*1.66)}
+html[data-jr] .jr .jrbr{display:inline}
+html[data-jr] .jr .jrbig{line-height:.83!important}
+html[data-jr] .jr .jrseq{height:520svh}
+html[data-jr] .jr .jrpin{height:100vh;height:100svh}
+html[data-jr] .jr .jrl1,html[data-jr] .jr .jrdb .jrbig{left:18px;right:18px}
+html[data-jr] .jr .jrl1{top:calc((1 - var(--o,0))*(50svh - var(--jh) - 8px) + var(--o,0)*76px)}
+html[data-jr] .jr .jrdb .jrbig{top:8px}
+html[data-jr] .jr .jrcard,html[data-jr] .jr .jrbody{display:none!important}
+html[data-jr] .jr .jrc{inset:auto!important;left:18px!important;right:18px;width:auto!important;top:calc(76px + var(--jh) + 12px)!important;bottom:auto!important;display:block!important}
+html[data-jr] .jr .jrsub{position:static!important;max-width:none!important;font-size:5.5vw!important;line-height:1.05;white-space:nowrap}
+html[data-jr] .jr .jrsub br{display:none}
+html[data-jr]:not([data-jrv=full]) .jr .jrvid{left:18px;right:18px;top:calc(76px + var(--jh) + 12px + 5.8vw + 12px);bottom:14px;width:auto;height:auto;max-width:none;aspect-ratio:auto;border-radius:18px;background:#0a0a0a}
+html[data-jr]:not([data-jrv=full]) .jr .jrvid video{object-fit:contain}
+html[data-jr][data-jrv=full] .jr .jrsub{color:#fff}
+html[data-jr] .jr .jrp .jrin{left:18px;right:18px;top:76px;bottom:70px}
+html[data-jr] .jr .jrp .jrbig{font-size:var(--jrfs,20vw)!important}
+html[data-jr] .jr .jrslides{margin-top:14px}
+html[data-jr] .jr .jrs{display:block}
+html[data-jr] .jr .jrs .jrk{height:min(38vw,21svh);max-height:none;border-radius:18px;font-size:calc(var(--k,6.4vw)*2.2)}
+html[data-jr][data-jrk] .jr .jrs .jrk{padding:12px}
+html[data-jr][data-jrk=p] .jr .jrs .jrk{font-size:calc(var(--k,6.4vw)*1.6)}
+html[data-jr][data-jrk=c] .jr .jrs .jrk{font-size:14px}
+html[data-jr] .jr .jrs h3{margin-top:12px;font-size:8vw}
+html[data-jr] .jr .jrs p{margin-top:7px;font-size:14.5px;line-height:1.3}
+html[data-jr] .jr .jrs a{margin-top:10px;font-size:5.8vw}
+html[data-jr] .jr .jrs .jrx{display:none}
+html[data-jr] .jr .jrtabs{gap:2px;margin-top:8px;flex-wrap:nowrap}
+html[data-jr] .jr .jrtabs button{padding:10px 8px;font-size:11.5px;white-space:nowrap}
+}
 </style>
 </head>
 <body>
@@ -1468,24 +1480,24 @@ html[data-jr][data-jrvc=sky] .jr{--jrvt:#A0BAD2;--jrvb:multiply}
 <!-- ================= TRUST STRIP ================= -->
 <section class="jr" id="jr" aria-label="How ACC funding works"><div class="jrseq"><div class="jrpin">
 <div class="jrvid"><video id="jrVid" muted loop playsinline preload="none" aria-label="Product demo: apply, connect your bank, get reviewed, choose funding, and manage it in the ACC portal"></video><i></i></div>
-<div class="jrdt"></div><div class="jrdb"><h2 class="jrbig jrf" data-l="2">See your funding</h2></div>
-<h2 class="jrbig jrl1 jrf" data-l="1">See how it works</h2>
-<div class="jrc"><h3 class="jrsub">Three steps.<br>Nothing hidden in between.</h3>
+<div class="jrdt"></div><div class="jrdb"><h2 class="jrbig jrf" data-l="2">See your<br class="jrbr"> funding</h2></div>
+<h2 class="jrbig jrl1 jrf" data-l="1">See how<br class="jrbr"> it works</h2>
+<div class="jrc"><h3 class="jrsub">Three steps. <br>Nothing hidden in between.</h3>
 <div class="jrcard"><div><b>01</b>Tell us about your business</div><div><b>02</b>Get an answer in seconds</div><div><b>03</b>Funded in 24 hours</div></div>
 <p class="jrbody">Apply once. Connect your business. Get reviewed. Choose your funding. Manage it in one portal.</p></div>
-<div class="jrp"><div class="jrin"><h2 class="jrbig jrf2" data-l="2">See your funding</h2>
+<div class="jrp"><div class="jrin"><h2 class="jrbig jrf2" data-l="2">See your<br class="jrbr"> funding</h2>
 <div class="jrslides">
-<div class="jrs on"><div class="jrk" style="--k:8.6vw"><span>$1B+</span></div><div><h3>Over $1 billion funded</h3><p>Over one billion dollars in capital to American businesses.</p><a href="#apply">Check your eligibility</a></div></div>
-<div class="jrs"><div class="jrk" style="--k:6.6vw"><span>24 hours</span></div><div><h3>Apply today, funded tomorrow</h3><p>Our engine decides in seconds. Approve the terms and the capital is in your business account, as fast as the next business day.</p><a href="#how">How it works</a></div></div>
-<div class="jrs"><div class="jrk" style="--k:4.6vw"><span>No credit check</span></div><div><h3>Your business decides</h3><p>We look at how your business performs, not your personal score.</p><a href="#eligibility">Is ACC a fit?</a></div></div>
-<div class="jrs"><div class="jrk" style="--k:5.4vw"><span>$25K – $1M</span></div><div><h3>Sized to your revenue</h3><p>Capital sized to the business, with repayment built around your cash flow.</p><a href="#apply">Check your eligibility</a></div></div>
+<div class="jrs on"><div class="jrk" style="--ki:url(https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261119_020049_cac71425-5e14-45a6-b936-ee49b316bcc0.png);--k:8.6vw"><span>$1B+</span></div><div><h3>Over $1 billion funded</h3><p>Over one billion dollars in capital to American businesses.</p><a href="#apply">Check your eligibility</a></div></div>
+<div class="jrs"><div class="jrk" style="--ki:url(https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261119_020305_6cf7dc50-5e2e-4961-a805-01d003ff6de1.png);--k:6.6vw"><span>24 hours</span></div><div><h3>Apply today, funded tomorrow</h3><p>Our engine decides in seconds.<span class="jrx"> Approve the terms and the capital is in your business account, as fast as the next business day.</span></p><a href="#how">How it works</a></div></div>
+<div class="jrs"><div class="jrk" style="--ki:url(https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261119_020304_3685bfd8-867c-4897-b77a-11f0c1167ee3.png);--k:4.6vw"><span>No credit check</span></div><div><h3>Your business decides</h3><p>We look at how your business performs, not your personal score.</p><a href="#eligibility">Is ACC a fit?</a></div></div>
+<div class="jrs"><div class="jrk" style="--ki:url(https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261119_020050_4378dc72-8ff5-4600-a601-efafe256ec78.png);--k:5.4vw"><span>$25K – $1M</span></div><div><h3>Sized to your revenue</h3><p>Capital sized to the business, with repayment built around your cash flow.</p><a href="#apply">Check your eligibility</a></div></div>
 </div>
 <div class="jrtabs"><button type="button" class="on">$1B+ funded</button><button type="button">24 hours</button><button type="button">No credit check</button><button type="button">$25K – $1M</button></div>
 </div></div>
 </div></div></section>
 <script>(function(){var S=document.getElementById('jr');if(!S)return;var H=document.documentElement,seq=S.querySelector('.jrseq'),v=document.getElementById('jrVid'),sl=S.querySelectorAll('.jrs'),tb=S.querySelectorAll('.jrtabs button'),cur=-1,BASE='';
 function cl(x){return x<0?0:x>1?1:x}
-function fit(){if(getComputedStyle(S).display==='none')return;var pad=innerWidth<768?36:innerWidth*.072,w=innerWidth-pad,m=1e9;S.querySelectorAll('.jrf').forEach(function(e){e.style.setProperty('font-size','100px','important');var rg=document.createRange();rg.selectNodeContents(e);var sw=rg.getBoundingClientRect().width;e.style.removeProperty('font-size');m=Math.min(m,100*w/sw)});m=Math.min(m,innerWidth*(innerWidth<768?.19:.15));S.style.setProperty('--jrfs',m+'px');for(var q=0;q<4;q++){var mx=0;S.querySelectorAll('.jrf').forEach(function(e){var rg=document.createRange();rg.selectNodeContents(e);mx=Math.max(mx,rg.getBoundingClientRect().width)});if(mx>w+1){m=m*w/mx;S.style.setProperty('--jrfs',m+'px')}else break}
+function fit(){if(getComputedStyle(S).display==='none')return;var pad=innerWidth<768?36:innerWidth*.072,w=innerWidth-pad,m=1e9;S.querySelectorAll('.jrf').forEach(function(e){e.style.setProperty('font-size','100px','important');var rg=document.createRange();rg.selectNodeContents(e);var sw=rg.getBoundingClientRect().width;e.style.removeProperty('font-size');m=Math.min(m,100*w/sw)});m=Math.min(m,innerWidth*(innerWidth<768?.3:.15));S.style.setProperty('--jrfs',m+'px');for(var q=0;q<4;q++){var mx=0;S.querySelectorAll('.jrf').forEach(function(e){var rg=document.createRange();rg.selectNodeContents(e);mx=Math.max(mx,rg.getBoundingClientRect().width)});if(mx>w+1){m=m*w/mx;S.style.setProperty('--jrfs',m+'px')}else break}
 var e2=S.querySelector('.jrf2');if(e2&&innerWidth>=768){e2.style.setProperty('font-size','100px','important');var r2=document.createRange();r2.selectNodeContents(e2);var s2=r2.getBoundingClientRect().width;e2.style.removeProperty('font-size');S.style.setProperty('--jrfs2',(100*(innerWidth*.646)/s2)+'px')}}
 function upd(){if(getComputedStyle(S).display==='none')return;var r=seq.getBoundingClientRect(),vh=innerHeight,p=cl(-r.top/(r.height-vh));
 var o=cl((p-.05)/.17),c=cl((p-.25)/.07)*(1-cl((p-.47)/.06)),pf=cl((p-.5)/.07),i=Math.min(3,Math.floor(cl((p-.6)/.4)*4));
@@ -1494,7 +1506,7 @@ if(i!==cur){cur=i;sl.forEach(function(e,k){e.classList.toggle('on',k===i);e.clas
 tb.forEach(function(b,k){b.onclick=function(){var r=seq.getBoundingClientRect(),top=r.top+scrollY,len=r.height-innerHeight;scrollTo({top:top+len*(.6+.4*(k+.5)/4),behavior:'smooth'})}});
 var tick=false;addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(function(){tick=false;upd()})}},{passive:true});
 addEventListener('resize',function(){fit();upd()});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){fit();upd()});fit();upd();window.__jr=function(){fit();upd()};
-if(v&&'IntersectionObserver' in window){new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){if(!v.src){var m=innerWidth<768&&H.getAttribute('data-jrv')==='full';v.poster=BASE+(m?'acc-demo-9x16.jpg':'acc-demo-16x9.jpg');v.src=BASE+(m?'acc-demo-9x16.mp4':'acc-demo-16x9.mp4')}var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}else if(v.src){v.pause()}})},{rootMargin:'200px'}).observe(S)}
+if(v&&'IntersectionObserver' in window){new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){if(!v.src){var m=innerWidth<768;v.poster=BASE+(m?'acc-demo-9x16.jpg':'acc-demo-16x9.jpg');v.src=BASE+(m?'acc-demo-9x16.mp4':'acc-demo-16x9.mp4')}var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}else if(v.src){v.pause()}})},{rootMargin:'200px'}).observe(S)}
 })();</script>
 
 <section class="blk" id="funding" style="padding-top:96px;padding-bottom:96px">
