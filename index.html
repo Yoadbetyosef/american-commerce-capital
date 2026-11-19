@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-call="c" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
+<html lang="en" data-proof data-call="c" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1229,6 +1229,35 @@ html[data-calld="2"] nav.top .navtel:hover{border-color:#606AF6;background:rgba(
 }
 @media(min-width:1181px) and (max-width:1439px){html[data-calld="2"] nav.top .nlinks a{padding:0 9px}html[data-calld="2"] nav.top .navtel{padding:0 8px}html[data-calld="2"] nav.top{gap:10px}}
 </style>
+<style id="proof-section">
+/* ===== photo + number section. Remove data-proof from <html> to restore "Every worry, answered". ===== */
+html[data-proof]{--proof-img:url(https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261119_003214_7fc45dc2-4f73-4f1a-9e19-c1f4c52ba234.png)}
+.pstat{display:none}
+html[data-proof] .worry{display:none}
+html[data-proof] .pstat{display:block;position:relative;z-index:5;background:#15120f;color:#fff;overflow:hidden}
+html[data-proof] .pstat .psph{position:relative;height:min(calc(100vh - 46px),50.8vw);min-height:520px;background:#1c2233 var(--proof-img) center/cover no-repeat}
+html[data-proof] .pstat .psph::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,12,.62) 0,rgba(10,10,12,.34) 34%,rgba(10,10,12,0) 62%),linear-gradient(0deg,rgba(10,10,12,.35) 0,rgba(10,10,12,0) 40%)}
+html[data-proof] .pstat .psc{position:absolute;z-index:2;left:1.85vw;bottom:4.5vw;max-width:42vw;font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif}
+html[data-proof] .pstat .psn{display:block;font-stretch:72%;font-weight:900;font-size:max(64px,8.1vw);line-height:.8;letter-spacing:-.015em;color:#fff}
+html[data-proof] .pstat .pst{margin:2.7vw 0 0;max-width:37vw;font-stretch:72%;font-weight:800;font-size:max(28px,3.45vw);line-height:.96;letter-spacing:-.01em;color:#fff}
+html[data-proof] .pstat .psq{display:grid;grid-template-columns:repeat(var(--cols,5),var(--sq,3.03vw));gap:.36vw;margin-top:2.4vw}
+html[data-proof] .pstat .psq i{display:block;width:var(--sq,3.03vw);height:var(--sq,3.03vw);background:linear-gradient(90deg,#D6FF3F var(--f,100%),rgba(255,255,255,.28) var(--f,100%));box-shadow:inset 0 0 0 2px #D6FF3F}
+html[data-proof] .pstat .ptick{background:#EDEDE3;color:#17150f;overflow:hidden;white-space:nowrap;padding:15px 0;font-family:'ACC Mono',ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+html[data-proof] .pstat .ptick div{display:inline-block;animation:ptick 46s linear infinite}
+html[data-proof] .pstat .ptick span{display:inline-block;margin-right:46px}
+html[data-proof] .pstat .ptick span::before{content:"";display:inline-block;width:8px;height:8px;margin-right:12px;background:#6BCB3C;border-radius:1px;vertical-align:1px}
+@keyframes ptick{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){html[data-proof] .pstat .ptick div{animation:none}}
+@media(max-width:767px){
+html[data-proof] .pstat .psph{height:150vw;min-height:0;max-height:92svh;background-position:74% center}
+html[data-proof] .pstat .psph::before{background:linear-gradient(0deg,rgba(10,10,12,.78) 0,rgba(10,10,12,.42) 44%,rgba(10,10,12,0) 68%)}
+html[data-proof] .pstat .psc{left:18px;right:18px;bottom:26px;max-width:none}
+html[data-proof] .pstat .psn{font-size:22.5vw;line-height:.8}
+html[data-proof] .pstat .pst{margin-top:5vw;max-width:none;font-size:9.6vw;line-height:.96}
+html[data-proof] .pstat .psq{--sq:calc((100vw - 36px - 11*1.3vw)/12);gap:1.3vw;margin-top:5.4vw}
+html[data-proof] .pstat .ptick{font-size:12px;padding:13px 0}
+}
+</style>
 </head>
 <body>
 
@@ -1320,6 +1349,8 @@ html[data-calld="2"] nav.top .navtel:hover{border-color:#606AF6;background:rgba(
       </section>
       <!-- 3 / EVERY WORRY, ANSWERED -->
       <section class="bankband hn" id="bankband" aria-label="Funding businesses that bank with major U.S. banks"><div class="marquee-container"><div class="marquee-track" id="banktrack"></div></div><div class="bbcta"><h3>Keep your bank. Get your capital here.</h3><p>Apply in about 2 minutes. An answer in seconds, funding in as little as 24 hours, and a real person you can call.</p><a class="bbbtn" href="#apply">Check your eligibility</a></div></section>
+<section class="pstat" id="pstat" aria-label="ACC in numbers"><div class="psph"><div class="psc"><b class="psn">24 hours</b><p class="pst">Apply today, funded tomorrow. Our engine decides in seconds.</p><div class="psq" style="--cols:12"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div><div class="ptick" aria-hidden="true"><div><span>No credit check</span><span>No collateral</span><span>Funded in as little as 24 hours</span><span>$25K – $1M</span><span>Direct funding source</span><span>All 50 states</span><span>A named Capital Specialist</span><span>No application fees</span><span>No credit check</span><span>No collateral</span><span>Funded in as little as 24 hours</span><span>$25K – $1M</span><span>Direct funding source</span><span>All 50 states</span><span>A named Capital Specialist</span><span>No application fees</span></div></div></section>
+
 <section class="worry" id="worries">
         <div class="wwrap">
           <div class="lab">You're probably wondering</div>
