@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-proof data-call="d" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
+<html lang="en" data-botbar data-proof data-call="d" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1265,6 +1265,11 @@ html[data-proof] .pstat .psq{--sq:calc((100vw - 36px - 11*1.3vw)/12);gap:1.3vw;m
 html[data-proof] .pstat .ptick{font-size:12px;padding:13px 0}
 }
 </style>
+<style id="bottom-edge">
+/* ===== phone: solid white bottom edge behind the browser toolbar. Remove data-botbar from <html> to undo. ===== */
+#botedge{display:none}
+@media(max-width:767px){html[data-botbar] #botedge{display:block;position:fixed;z-index:57;left:0;right:0;bottom:0;height:6px;background:#fff;pointer-events:none}}
+</style>
 </head>
 <body>
 
@@ -1999,5 +2004,6 @@ var nr=document.querySelector('nav.top .r');if(nr&&!nr.querySelector('.navtel'))
 function w(){if(!H.classList.contains('scr'))H.style.setProperty('--askw',a.offsetWidth+'px')}
 var t;addEventListener('scroll',function(){H.classList.add('scr');clearTimeout(t);t=setTimeout(function(){H.classList.remove('scr');setTimeout(w,320)},650)},{passive:true});
 setTimeout(w,50);addEventListener('resize',w);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(w,50)});window.__askw=w})();</script>
+<div id="botedge" aria-hidden="true"></div>
 </body>
 </html>
