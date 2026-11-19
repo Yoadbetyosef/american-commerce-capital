@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-mx data-mxfoot="white" data-jr="w" data-jrvc="navy" data-jrk="i" data-botbar data-proof data-call="d" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
+<html lang="en" data-modal="a" data-mx data-mxfoot="white" data-jr="w" data-jrvc="navy" data-jrk="i" data-botbar data-proof data-call="d" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1545,6 +1545,39 @@ html[data-mx] .mxfo .cols .tel{font-size:11vw}
 html[data-mx] .mxfo .lg{padding:30px 18px 0}
 html[data-mx] .mxfo .wm{margin:20px 0 -6vw}
 }
+</style>
+<style id="modal-skin">
+/* ===== eligibility form skin. Remove data-modal from <html> to restore the black form. ===== */
+html[data-modal] .modal-bg{background:rgba(23,21,15,.45)!important}
+html[data-modal] .modal-card{--mc:#EDEDE3;--mi:#17150f;--mf:#fff;--ml:rgba(23,21,15,.2);--ms:#606AF6;--msb:#E7E9FF;--msi:#17150f;--mb:#E664B4;--mbh:#D44C9C;--mbi:#17150f;background:var(--mc)!important;color:var(--mi)!important;border:0!important;border-radius:26px!important;max-width:760px;box-shadow:0 30px 80px -24px rgba(0,0,0,.5);font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;letter-spacing:-.02em}
+html[data-modal=b] .modal-card{--mc:#fff;--mf:#F6F6EF;--ms:#17150f;--msb:#D6FF3F;--mb:#3B41AE;--mbh:#2e3496;--mbi:#fff}
+html[data-modal=c] .modal-card{--mc:#1d2452;--mi:#fff;--mf:rgba(255,255,255,.08);--ml:rgba(255,255,255,.28);--ms:#D6FF3F;--msb:#D6FF3F;--msi:#17150f}
+html[data-modal] .modal-k{font-family:'ACC Mono',ui-monospace,Menlo,monospace!important;font-size:13px!important;letter-spacing:.02em!important;color:var(--mi)!important;opacity:.6}
+html[data-modal] .modal-t{font-stretch:72%!important;font-weight:800!important;font-size:clamp(34px,4.6vw,56px)!important;line-height:.96!important;letter-spacing:-.015em!important;color:var(--mi)!important}
+html[data-modal] .modal .modal-t .mk{color:inherit!important;background:linear-gradient(transparent 58%,#D6FF3F 58%)!important;padding:0 .06em!important}
+html[data-modal=c] .modal .modal-t .mk{color:#D6FF3F!important;background:none!important}
+html[data-modal] .modal-s{font-stretch:100%;font-weight:500!important;font-size:16px!important;color:var(--mi)!important;opacity:.72}
+html[data-modal] .modal-x{border-radius:12px!important;border:2px solid var(--ml)!important;background:var(--mf)!important}
+html[data-modal] .modal-x span{background:var(--mi)!important}
+html[data-modal] .modal-x:hover{border-color:#606AF6!important}
+html[data-modal] .modal .prog i{background:var(--ml)!important;height:4px;border-radius:2px}
+html[data-modal] .modal .prog i.on{background:var(--ms)!important}
+html[data-modal] .modal .stage h3,html[data-modal] .modal .done h3{font-stretch:72%!important;font-weight:800!important;font-size:30px!important;letter-spacing:-.01em!important;color:var(--mi)!important}
+html[data-modal] .modal .stage .hint,html[data-modal] .modal .fine,html[data-modal] .modal .note,html[data-modal] .modal .done ol{font-stretch:100%;font-weight:500;color:var(--mi)!important;opacity:.7}
+html[data-modal] .modal .f label{font-stretch:100%;font-weight:600;font-size:15px;color:var(--mi)!important}
+html[data-modal] .modal .opts button{font-stretch:100%;font-weight:600;font-size:15px;border:2px solid var(--ml)!important;border-radius:12px!important;background:var(--mf)!important;color:var(--mi)!important}
+html[data-modal] .modal .opts button:hover{border-color:var(--ms)!important}
+html[data-modal] .modal .opts button.on{border-color:var(--ms)!important;background:var(--msb)!important;color:var(--msi)!important}
+html[data-modal] .modal .f input,html[data-modal] .modal .f select{border:2px solid var(--ml)!important;border-radius:12px!important;background:var(--mf)!important;color:var(--mi)!important;color-scheme:light}
+html[data-modal=c] .modal .f input,html[data-modal=c] .modal .f select{color-scheme:dark}
+html[data-modal] .modal .f input:focus,html[data-modal] .modal .f select:focus{border-color:#606AF6!important}
+html[data-modal] .modal .fnav{border-top:1px solid var(--ml)!important}
+html[data-modal] .modal .pill.k{border-radius:13px!important;background:var(--mb)!important;color:var(--mbi)!important;font-stretch:100%;font-weight:500!important;font-size:16px!important;letter-spacing:-.02em!important;text-transform:none!important;padding:15px 24px!important}
+html[data-modal] .modal .pill.k:hover{background:var(--mbh)!important}
+html[data-modal] .modal .pill.ok{border-radius:13px!important;border:2px solid #606AF6!important;color:var(--mi)!important;text-transform:none!important}
+html[data-modal] .modal .err{color:#c0392b!important}
+html[data-modal=c] .modal .err{color:#ffb4b4!important}
+html[data-modal] .modal .done ol li::marker{color:var(--ms)!important}
 </style>
 </head>
 <body>
