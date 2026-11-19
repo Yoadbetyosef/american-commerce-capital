@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-proof data-call="c" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
+<html lang="en" data-proof data-call="d" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1228,6 +1228,13 @@ html[data-calld="2"] nav.top .navtel b{font-weight:500;opacity:.7;margin-right:.
 html[data-calld="2"] nav.top .navtel:hover{border-color:#606AF6;background:rgba(255,255,255,.13)}
 }
 @media(min-width:1181px) and (max-width:1439px){html[data-calld="2"] nav.top .nlinks a{padding:0 9px}html[data-calld="2"] nav.top .navtel{padding:0 8px}html[data-calld="2"] nav.top{gap:10px}}
+/* d (phone): no Call half beside the chat; a small phone icon sits in the top bar next to Check Eligibility */
+@media(max-width:767px){
+html[data-call="d"] nav.top .navtel{display:inline-flex;flex:0 0 auto;margin-left:auto;width:40px;height:40px;box-sizing:border-box;border:2px solid #E664B4;border-radius:12px;font-size:0;color:transparent;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z'/%3E%3C/svg%3E") center/19px no-repeat}
+html[data-call="d"] nav.top .navtel:active{background-color:#F2B5DD}
+html[data-call="d"] nav.top .navcta{margin-left:0!important}
+}
+@media(max-width:389px){html[data-call="d"] nav.top .navtel{width:36px;height:40px}html[data-call="d"] nav.top .r{gap:5px}}
 </style>
 <style id="proof-section">
 /* ===== photo + number section. Remove data-proof from <html> to restore "Every worry, answered". ===== */
@@ -1909,7 +1916,9 @@ html[data-hcard=c] .hcar .chips{display:flex}
  html[data-hero=photo][data-hcard] .heroc .title h1{font-size:15.2vw!important;line-height:.8}
  html[data-hero=photo][data-hcard] .heroc .bottom{width:100%;margin-top:20px;padding:22px 20px 20px;border-radius:26px}
  .hcar .q{font-size:7.1vw;padding-right:0;margin-right:74px;min-height:2em}
- .hcar .a{margin-top:8px;font-size:14px}
+ .hcar .q{height:2em;overflow:hidden}
+ .hcar .a{margin-top:8px;font-size:14px;line-height:1.45;height:2.9em;overflow:hidden}
+ .hcar .tile2 b{min-height:calc(2*1.15em + 12px);display:flex;align-items:center;justify-content:center}
  .hcar .nav button{width:27px;height:27px}
  .hcar .nav{gap:10px}
  .hcar .lab2{margin:16px 0 10px;font-size:12px}
@@ -1986,7 +1995,7 @@ html[data-hcard=c] .hcar .chips{display:flex}
 <script>(function(){var H=document.documentElement,a=document.getElementById('askacc'),p=document.getElementById('askpan');if(!a)return;
 for(var n=a.firstChild;n;n=n.nextSibling){if(n.nodeType===3&&n.nodeValue.trim()){var s=document.createElement('span');s.className='lbl';s.textContent=n.nodeValue.trim();a.replaceChild(s,n);break}}
 if(p){var hd=p.querySelector('.hd'),r=document.createElement('a');r.className='callrow';r.href='tel:+12015550148';r.innerHTML='<span>Call a Capital Specialist</span><small>(201) 555-0148</small>';if(hd)hd.parentNode.insertBefore(r,hd.nextSibling)}
-var nr=document.querySelector('nav.top .r');if(nr&&!nr.querySelector('.navtel')){var nt=document.createElement('a');nt.className='navtel';nt.href='tel:+12015550148';nt.innerHTML='<b>Call</b>(201) 555-0148';nr.insertBefore(nt,nr.firstChild)}
+var nr=document.querySelector('nav.top .r');if(nr&&!nr.querySelector('.navtel')){var nt=document.createElement('a');nt.className='navtel';nt.href='tel:+12015550148';nt.setAttribute('aria-label','Call (201) 555-0148');nt.innerHTML='<b>Call</b>(201) 555-0148';nr.insertBefore(nt,nr.firstChild)}
 function w(){if(!H.classList.contains('scr'))H.style.setProperty('--askw',a.offsetWidth+'px')}
 var t;addEventListener('scroll',function(){H.classList.add('scr');clearTimeout(t);t=setTimeout(function(){H.classList.remove('scr');setTimeout(w,320)},650)},{passive:true});
 setTimeout(w,50);addEventListener('resize',w);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(w,50)});window.__askw=w})();</script>
