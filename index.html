@@ -2444,5 +2444,6 @@ var t;addEventListener('scroll',function(){H.classList.add('scr');clearTimeout(t
 setTimeout(w,50);addEventListener('resize',w);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(w,50)});window.__askw=w})();</script>
 <div id="botedge" aria-hidden="true"></div>
 <script>addEventListener('load',function(){if(location.hash==='#apply'){var a=document.querySelector('nav.top .navcta');if(a)setTimeout(function(){a.click()},350)}});</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#apply"]');if(!a||e.defaultPrevented)return;var m=document.querySelector('.modal');if(m&&m.classList.contains('open'))return;var n=document.querySelector('nav.top .navcta');if(n&&a!==n){e.preventDefault();n.click()}});</script>
 </body>
 </html>
