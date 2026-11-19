@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
+<html lang="en" data-call="c" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1190,6 +1190,45 @@ html[data-film][data-fmob] .film .fxq blockquote{margin:8px 0 0;font-stretch:100
 html[data-film][data-fmob] .film .fxq figcaption{margin-top:14px;font-family:'ACC Mono',ui-monospace,Menlo,monospace;font-size:12px;line-height:1.4;letter-spacing:.02em;text-transform:uppercase;color:rgba(23,21,15,.7)}
 }
 </style>
+<style id="call-btn">
+/* ===== chat + call button. Remove data-call from <html> to restore the lime sticky bar and the plain Ask ACC button. ===== */
+#acccall,#askpan .callrow{display:none}
+@media(max-width:767px){
+html[data-call] .mcta{display:none!important}
+html[data-call] #askacc{bottom:calc(14px + env(safe-area-inset-bottom,0px));height:48px;min-width:48px;padding:0 15px 0 13px;border-radius:14px;gap:0;transition:padding .28s,border-radius .28s,border-color .15s,background .15s}
+html[data-call] #askacc svg{width:23px;height:23px;flex:0 0 auto}
+html[data-call] #askacc .lbl{display:inline-block;overflow:hidden;white-space:nowrap;max-width:140px;margin-left:9px;opacity:1;transition:max-width .28s,margin-left .28s,opacity .2s}
+html[data-call].scr #askacc:not(.open){padding:0 11px}
+html[data-call].scr #askacc:not(.open) .lbl{max-width:0;margin-left:0;opacity:0}
+html[data-call] #askpan{bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+/* a / b: the call lives inside the panel as its first, highlighted row */
+html[data-call="a"] #askpan .callrow,html[data-call="b"] #askpan .callrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 14px 4px;padding:13px 16px;border-radius:14px;background:#D6FF3F;color:#17150f;font-weight:700;font-size:14.5px;letter-spacing:-.02em;flex:0 0 auto}
+html[data-call] #askpan .callrow span,html[data-call] #askpan .callrow small{white-space:nowrap}
+html[data-call="a"] #askpan .ft a.s,html[data-call="b"] #askpan .ft a.s{display:none}
+html[data-call] #askpan .callrow small{font-family:'ACC Mono',ui-monospace,Menlo,monospace;font-weight:500;font-size:13px;letter-spacing:0}
+/* c: at rest the pill opens into  Call | Ask ACC  (one icon); while scrolling only the chat square remains */
+html[data-call="c"] #acccall{position:fixed;z-index:58;right:calc(12px + var(--askw,124px) - 2px);bottom:calc(14px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;height:48px;box-sizing:border-box;padding:0 14px 0 16px;background:#D6FF3F;color:#17150f;border:2px solid rgba(23,21,15,.2);border-right:0;border-radius:14px 0 0 14px;font:700 15px/1 'ACC Grotesk','Helvetica Neue',Arial,sans-serif;letter-spacing:-.02em;box-shadow:0 10px 30px -12px rgba(0,0,0,.35);transition:opacity .2s,transform .28s}
+html[data-call="c"] #acccall svg{display:none}
+html[data-call="c"] #askacc{border-radius:0 14px 14px 0}
+html[data-call="c"].scr #askacc:not(.open){border-radius:14px}
+html[data-call="c"].scr #acccall{opacity:0;pointer-events:none;transform:translateX(14px)}
+}
+/* desktop placement of the call. 1: joined to Ask ACC with the number. 2: number in the top bar. */
+@media(min-width:768px){
+html[data-calld="1"] #acccall{position:fixed;z-index:58;right:calc(1.5vw + var(--askw,124px) - 2px);bottom:1.45vw;display:inline-flex;align-items:center;height:clamp(42px,3.45vw,50px);box-sizing:border-box;padding:0 15px 0 17px;background:#D6FF3F;color:#17150f;border:2px solid rgba(23,21,15,.2);border-right:0;border-radius:12px 0 0 12px;font:700 16px/1 'ACC Grotesk','Helvetica Neue',Arial,sans-serif;letter-spacing:-.02em;box-shadow:0 10px 30px -12px rgba(0,0,0,.35);transition:background .15s}
+html[data-calld="1"] #acccall:hover{background:#c4ee2a}
+html[data-calld="1"] #acccall svg{display:none}
+html[data-calld="1"] #acccall span::after{content:"  (201) 555-0148";white-space:pre;font-weight:500}
+html[data-calld="1"] #askacc{border-radius:0 12px 12px 0}
+}
+nav.top .navtel{display:none}
+@media(min-width:1181px){
+html[data-calld="2"] nav.top .navtel{display:inline-flex;align-items:center;height:52px;padding:0 14px;border:2px solid transparent;border-radius:16px;color:#fff;font-size:16px;font-weight:500;letter-spacing:-.02em;white-space:nowrap;transition:border-color .2s,background .2s}
+html[data-calld="2"] nav.top .navtel b{font-weight:500;opacity:.7;margin-right:.45em}
+html[data-calld="2"] nav.top .navtel:hover{border-color:#606AF6;background:rgba(255,255,255,.13)}
+}
+@media(min-width:1181px) and (max-width:1439px){html[data-calld="2"] nav.top .nlinks a{padding:0 9px}html[data-calld="2"] nav.top .navtel{padding:0 8px}html[data-calld="2"] nav.top{gap:10px}}
+</style>
 </head>
 <body>
 
@@ -1912,5 +1951,13 @@ html[data-hcard=c] .hcar .chips{display:flex}
  pan.querySelector('.ft a.p').addEventListener('click',function(){tog(false)});
 })();
 </script>
+<a id="acccall" href="tel:+12015550148" aria-label="Call a Capital Specialist"><span>Call</span></a>
+<script>(function(){var H=document.documentElement,a=document.getElementById('askacc'),p=document.getElementById('askpan');if(!a)return;
+for(var n=a.firstChild;n;n=n.nextSibling){if(n.nodeType===3&&n.nodeValue.trim()){var s=document.createElement('span');s.className='lbl';s.textContent=n.nodeValue.trim();a.replaceChild(s,n);break}}
+if(p){var hd=p.querySelector('.hd'),r=document.createElement('a');r.className='callrow';r.href='tel:+12015550148';r.innerHTML='<span>Call a Capital Specialist</span><small>(201) 555-0148</small>';if(hd)hd.parentNode.insertBefore(r,hd.nextSibling)}
+var nr=document.querySelector('nav.top .r');if(nr&&!nr.querySelector('.navtel')){var nt=document.createElement('a');nt.className='navtel';nt.href='tel:+12015550148';nt.innerHTML='<b>Call</b>(201) 555-0148';nr.insertBefore(nt,nr.firstChild)}
+function w(){if(!H.classList.contains('scr'))H.style.setProperty('--askw',a.offsetWidth+'px')}
+var t;addEventListener('scroll',function(){H.classList.add('scr');clearTimeout(t);t=setTimeout(function(){H.classList.remove('scr');setTimeout(w,320)},650)},{passive:true});
+setTimeout(w,50);addEventListener('resize',w);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(w,50)});window.__askw=w})();</script>
 </body>
 </html>
