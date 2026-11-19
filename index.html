@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-modal="a" data-mx data-mxfoot="white" data-jr="w" data-jrvc="navy" data-jrk="i" data-botbar data-proof data-call="d" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
+<html lang="en" data-navx data-modal="a" data-mx data-mxfoot="white" data-jr="w" data-jrvc="navy" data-jrk="i" data-botbar data-proof data-call="d" data-calld="2" data-film="2" data-fmob="a" data-hero="photo" data-himg="mirror" data-wf="2" data-navbar="full" data-mmenu="white" data-mburger="left" data-mbrand="three" data-io="b" data-bb="cta" data-bbbtn="blue" data-hcard="b" data-font="cg" data-intro data-theme data-rise data-fl data-rhl>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1544,6 +1544,19 @@ html[data-mx] .mxfo .cols>div:first-child{grid-column:1/-1}
 html[data-mx] .mxfo .cols .tel{font-size:11vw}
 html[data-mx] .mxfo .lg{padding:30px 18px 0}
 html[data-mx] .mxfo .wm{margin:20px 0 -6vw}
+/* phone: no call card under the team; team slides sideways; standard cards slide with a margin and turn lime on tap */
+html[data-mx] .mxt .mxcall{display:none}
+html[data-mx] .mxt .mxgrid{display:flex;gap:10px;margin:28px -18px 0;padding:0 18px 6px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:18px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+html[data-mx] .mxt .mxgrid::-webkit-scrollbar{display:none}
+html[data-mx] .mxt .mxp{flex:0 0 78vw;scroll-snap-align:start}
+html[data-mx] .mxt{padding-bottom:10px}
+html[data-mx] .mxs .mxsc{scroll-snap-type:x proximity;scroll-padding-left:18px;overscroll-behavior-x:contain}
+html[data-mx] .mxs .mxc{flex-basis:min(380px,78vw)}
+html[data-mx] .mxs .mxc.act::after{opacity:1}
+html[data-mx] .mxs .mxc.act em,html[data-mx] .mxs .mxc.act b{color:#17150f}
+html[data-mx] .mxs .mxc.act p{top:calc(42px + 9.4vw + 14px);bottom:auto;left:16px;right:16px;padding:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;font-size:18px;line-height:1.25}
+html[data-mx] .mxs .mxc.act .ar{display:block;left:16px;bottom:16px;font-size:26px;color:#17150f}
+html[data-mx] .mxs .mxc.act .ar::before{content:"Check your eligibility ";font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;font-stretch:72%;font-weight:800;font-size:.8em}
 }
 </style>
 <style id="modal-skin">
@@ -1580,6 +1593,40 @@ html[data-modal=c] .modal .err{color:#ffb4b4!important}
 html[data-modal] .modal .done ol li::marker{color:var(--ms)!important}
 html[data-modal] .modal .okring{border-color:var(--ms)!important}
 html[data-modal] .modal .okring svg,html[data-modal] .modal .okring path{stroke:var(--ms)!important}
+</style>
+<style id="navx">
+/* ===== Midi-matched bar and drop-downs. Remove data-navx from <html> to undo. ===== */
+/* Midi's measured bar: rgba(0,0,0,.45) + blur(48px), 84px high, 32px lower corners */
+html[data-navx] nav.top,html[data-navx] nav.top.dark,html[data-navx] nav.top.dark.lime{background:rgba(0,0,0,.45)!important;-webkit-backdrop-filter:blur(48px)!important;backdrop-filter:blur(48px)!important}
+.ddp{display:none}
+@media(min-width:981px){
+html[data-navx] nav.top,html[data-navx] nav.top.dark,html[data-navx] nav.top.dark.lime{height:84px;border-radius:0 0 32px 32px;padding:0 16px 0 32px;z-index:66;transition:background .25s,border-radius .25s}
+html[data-navx] nav.top .nlinks a.dd{cursor:pointer}
+html[data-navx] nav.top .nlinks a.dd::after{content:"";display:inline-block;width:13px;height:8px;margin-left:10px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 8'%3E%3Cpath d='M1 1l5.5 5.5L12 1' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 8'%3E%3Cpath d='M1 1l5.5 5.5L12 1' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .25s}
+html[data-navx] nav.top .nlinks a.dd.on{border-color:#3B41AE}
+html[data-navx] nav.top .nlinks a.dd.on::after{transform:rotate(180deg)}
+html[data-navx] nav.top.ddopen,html[data-navx] nav.top.ddopen.dark,html[data-navx] nav.top.ddopen.dark.lime{background:#fff!important;color:#17150f!important;border-radius:0;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+html[data-navx] nav.top.ddopen .navalt,html[data-navx] nav.top.ddopen .navtel{color:#17150f!important}
+html[data-navx] .ddp{display:block;position:fixed;z-index:65;left:0;right:0;top:84px;background:#fff;color:#17150f;border-radius:0 0 32px 32px;padding:34px 6.6vw 44px;font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;letter-spacing:-.02em;visibility:hidden;opacity:0;transform:translateY(-10px);transition:opacity .25s,transform .25s,visibility 0s .25s;box-shadow:0 30px 60px -30px rgba(0,0,0,.35)}
+html[data-navx] .ddp.on{visibility:visible;opacity:1;transform:none;transition:opacity .25s,transform .25s}
+html[data-navx] .ddp .g{display:grid;grid-template-columns:1.05fr 1fr .62fr;gap:3.4vw;align-items:stretch}
+html[data-navx] .ddp a{color:inherit;display:block}
+html[data-navx] .ddp .l a{padding:20px 0;border-top:1px solid rgba(23,21,15,.16)}
+html[data-navx] .ddp .l b{display:block;font-weight:700;font-size:17px}
+html[data-navx] .ddp .l span{display:block;margin-top:4px;max-width:26em;font-size:16px;line-height:1.3;font-weight:500;color:rgba(23,21,15,.75)}
+html[data-navx] .ddp .l a:hover b{text-decoration:underline;text-underline-offset:3px}
+html[data-navx] .ddp .im{border-radius:22px;min-height:min(46vh,340px);background:#d9d9d4 center/cover no-repeat}
+html[data-navx] .ddp .r small{display:block;padding-top:14px;border-top:1px solid rgba(23,21,15,.16);font-family:'ACC Mono',ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:rgba(23,21,15,.7)}
+html[data-navx] .ddp .r>a{padding:16px 0 22px;font-weight:600;font-size:16px}
+html[data-navx] .ddp .r>a:hover{text-decoration:underline;text-underline-offset:3px}
+html[data-navx] .ddp .r .cd{margin-top:6px;padding:22px;border-radius:20px;background:#EDEDE3}
+html[data-navx] .ddp .r .cd b{display:block;font-weight:700;font-size:17px;line-height:1.25}
+html[data-navx] .ddp .r .cd a{margin-top:16px;padding-top:14px;border-top:1px solid rgba(23,21,15,.16);font-stretch:72%;font-weight:800;font-size:17px}
+html[data-navx] .ddp .r .cd a::after{content:" \2192";font-stretch:100%}
+html[data-navx] #ddbg{position:fixed;inset:0;z-index:64;background:rgba(10,10,12,.35);opacity:0;visibility:hidden;transition:opacity .25s,visibility 0s .25s}
+html[data-navx] #ddbg.on{opacity:1;visibility:visible;transition:opacity .25s}
+}
+@media(min-width:981px) and (max-width:1500px){html[data-navx] nav.top{gap:10px!important;padding-left:24px!important}html[data-navx] nav.top .nlinks a{padding:0 10px!important;font-size:15px}html[data-navx] nav.top .nlinks a.dd::after{margin-left:7px}html[data-navx] nav.top .navtel{display:none!important}html[data-navx] nav.top .brand{font-size:22px}}
 </style>
 </head>
 <body>
@@ -1755,8 +1802,22 @@ if(v&&'IntersectionObserver' in window){new IntersectionObserver(function(en){en
 <div class="lg"><p>American Commerce Capital provides commercial financing to established U.S. businesses. Products are for business purposes only and are not consumer loans. All applications are subject to review and approval; approval is not guaranteed. Amounts, costs, terms, and timelines vary and are disclosed in writing before any agreement. ACC products are commercial financing products, not consumer loans, and are structured as business capital agreements. ACC is the direct funder on every transaction. Availability may be subject to state-specific commercial financing disclosure requirements.</p><p>American Commerce Capital is a privately held company. It is not a bank and is not affiliated with, endorsed by, or backed by the U.S. Small Business Administration or any agency of the United States government.</p><p>© <span class="yr"></span> American Commerce Capital</p></div>
 <div class="wm" aria-hidden="true">ACC</div></footer>
 <script>(function(){var k=document.getElementById('mxtrack');if(k){var f=function(){k.style.animationDuration=Math.max(12,k.scrollHeight/2/50)+'s'};f();addEventListener('resize',f);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(f)}})();</script>
+<script>(function(){if(!matchMedia('(hover:none)').matches&&innerWidth>767)return;var cs=document.querySelectorAll('.mxs .mxc');cs.forEach(function(c){c.addEventListener('click',function(e){if(innerWidth>767)return;if(!c.classList.contains('act')){e.preventDefault();e.stopImmediatePropagation();cs.forEach(function(x){x.classList.remove('act')});c.classList.add('act')}},true)})})();</script>
 <script>(function(){var t=document.getElementById('mxsc');if(!t)return;document.querySelectorAll('.mxs .mxnav button').forEach(function(b){b.onclick=function(){var c=t.querySelector('.mxc');t.scrollBy({left:+b.dataset.d*(c.offsetWidth+16),behavior:'smooth'});b.blur()}})})();</script>
 
+<div id="ddbg"></div>
+<div class="ddp" id="dd0" role="region" aria-label="How it works"><div class="g"><div class="l"><a href="how-it-works.html"><b>See how ACC funding works</b><span>Three steps, from application to funding. Nothing hidden in between.</span></a><a href="how-it-works.html#fit"><b>Is ACC a fit?</b><span>The baseline. Meeting it makes you eligible to apply. It is not an approval.</span></a><a href="why-acc.html#ccs"><b>The Clear Capital Standard</b><span>Seven things you will understand before you accept any offer.</span></a></div><div class="im" style="background-image:url(https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261119_020304_3685bfd8-867c-4897-b77a-11f0c1167ee3.png)"></div><div class="r"><small>Ready?</small><a href="#apply">Check your eligibility</a><small>Rather talk?</small><a href="tel:+12015550148">Call (201) 555-0148</a><div class="cd"><b>About 2 minutes. No bank details. No obligation.</b><a href="#apply">Check your eligibility</a></div></div></div></div>
+<div class="ddp" id="dd1" role="region" aria-label="Industries"><div class="g"><div class="l"><a href="industries.html"><b>Industries we fund</b><span>Companies that manufacture, transport, construct, serve, sell, and repair.</span></a><a href="industries.html#list"><b>Construction</b><span>Materials and labor ahead of receivables.</span></a><a href="industries.html#list"><b>Manufacturing</b><span>Raw materials, machinery, large orders.</span></a><a href="industries.html#list"><b>Main Street</b><span>Inventory, renovations, new locations.</span></a></div><div class="im" style="background-image:url(https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261119_020049_cac71425-5e14-45a6-b936-ee49b316bcc0.png)"></div><div class="r"><small>Capital</small><a href="how-it-works.html#fit">$25K – $1M</a><small>Rather talk?</small><a href="tel:+12015550148">Call (201) 555-0148</a><div class="cd"><b>If your business has consistent revenue, we want to understand it.</b><a href="#apply">Check your eligibility</a></div></div></div></div>
+<div class="ddp" id="dd2" role="region" aria-label="Why ACC"><div class="g"><div class="l"><a href="why-acc.html"><b>Why ACC</b><span>Between the bank and the marketplace, a company you can actually talk to.</span></a><a href="about.html#team"><b>A person behind every file</b><span>A Capital Specialist answers questions before you apply and explains every option in plain language.</span></a><a href="about.html"><b>About American Commerce Capital</b><span>Built around one belief: understand your capital before you accept it.</span></a></div><div class="im" style="background-image:url(https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261119_023633_d09fc4f4-fff8-4c92-8a95-b4daed5d117b.png)"></div><div class="r"><small>Speak with a Capital Specialist</small><a href="tel:+12015550148">(201) 555-0148</a><small>Partners</small><a href="partners.html">Partners / ISO</a><div class="cd"><b>ACC is the direct funder on every transaction.</b><a href="#apply">Check your eligibility</a></div></div></div></div>
+<div class="ddp" id="dd3" role="region" aria-label="Reviews"><div class="g"><div class="l"><a href="reviews.html"><b>What owners say</b><span>4.9 average rating from 120+ funded businesses.</span></a><a href="reviews.html"><b>James Moretti · Moretti Concrete & Paving</b><span>“They told me the total cost in dollars before I signed anything.”</span></a><a href="reviews.html"><b>Linda Tran · Tran Precision Machining</b><span>“One person. Same person every time.”</span></a></div><div class="im" style="background-image:url(https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261119_020050_4378dc72-8ff5-4600-a601-efafe256ec78.png)"></div><div class="r"><small>Ready?</small><a href="#apply">Check your eligibility</a><small>Rather talk?</small><a href="tel:+12015550148">Call (201) 555-0148</a><div class="cd"><b>Funded. Understood. Would do it again.</b><a href="#apply">Check your eligibility</a></div></div></div></div>
+<div class="ddp" id="dd4" role="region" aria-label="FAQ"><div class="g"><div class="l"><a href="faq.html"><b>How much can I qualify for?</b><span>ACC provides business capital from $25,000 to $1,000,000.</span></a><a href="faq.html"><b>How fast is funding?</b><span>An answer in seconds. Capital in your account in as little as 24 hours.</span></a><a href="faq.html"><b>What does it cost?</b><span>Before you accept, you see the total obligation in dollars, every fee, and how payments work.</span></a></div><div class="im" style="background-image:url(https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20261119_023633_667b5fce-c873-4de4-9e16-7bcbde7c17f0.png)"></div><div class="r"><small>All questions</small><a href="faq.html">Straight answers, before you apply</a><small>Rather talk?</small><a href="tel:+12015550148">Call (201) 555-0148</a><div class="cd"><b>Anything else? Call us. No obligation to apply first.</b><a href="#apply">Check your eligibility</a></div></div></div></div>
+<script>(function(){var nav=document.querySelector('nav.top');if(!nav)return;var L=nav.querySelectorAll('.nlinks a'),bg=document.getElementById('ddbg'),open=null;
+function close(){if(!open)return;open.a.classList.remove('on');open.p.classList.remove('on');nav.classList.remove('ddopen');bg.classList.remove('on');open=null}
+L.forEach(function(a,k){var p=document.getElementById('dd'+k);if(!p)return;a.classList.add('dd');a.setAttribute('aria-haspopup','true');
+a.addEventListener('click',function(e){if(innerWidth<981)return;e.preventDefault();e.stopImmediatePropagation();var was=open&&open.a===a;close();if(!was){a.classList.add('on');p.classList.add('on');nav.classList.add('ddopen');bg.classList.add('on');open={a:a,p:p}}},true);
+p.addEventListener('click',function(e){if(e.target.closest('a'))close()})});
+bg.addEventListener('click',close);addEventListener('keydown',function(e){if(e.key==='Escape')close()});addEventListener('resize',close);
+var y0=0;addEventListener('scroll',function(){if(open&&Math.abs(scrollY-y0)>160)close();if(!open)y0=scrollY},{passive:true})})();</script>
 <section class="blk g" id="how">
   <div class="lab">How it works</div>
   <h2 class="hn"><span class="mk">Three steps.</span> <span class="tx dim">Nothing hidden in between.</span></h2>
@@ -2375,5 +2436,6 @@ function w(){if(!H.classList.contains('scr'))H.style.setProperty('--askw',a.offs
 var t;addEventListener('scroll',function(){H.classList.add('scr');clearTimeout(t);t=setTimeout(function(){H.classList.remove('scr');setTimeout(w,320)},650)},{passive:true});
 setTimeout(w,50);addEventListener('resize',w);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(w,50)});window.__askw=w})();</script>
 <div id="botedge" aria-hidden="true"></div>
+<script>addEventListener('load',function(){if(location.hash==='#apply'){var a=document.querySelector('nav.top .navcta');if(a)setTimeout(function(){a.click()},350)}});</script>
 </body>
 </html>
