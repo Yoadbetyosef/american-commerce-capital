@@ -1727,7 +1727,7 @@ nav.top .brand .tmk{display:none}html[data-tm] nav.top .brand .tmk{display:inlin
       <!-- 2 / WHO WE ARE: industries orbit -->
       <section class="indorb" id="industries-orbit">
         <div class="icopy"><h2 class="hn">Capital for<br>the people<br>who keep<br><span class="rot" id="indRot"></span>moving.</h2>
-        <p class="hn"><span class="mk">Over $1 billion funded</span> to the companies that build, employ, manufacture, transport, serve, sell, and repair across the country.</p></div>
+        <p class="hn"><span class="mk">From $25,000 to $1,000,000</span> for the companies that build, employ, manufacture, transport, serve, sell, and repair across the country.</p></div>
         <div class="iorbit" id="indOrbit"><div class="iframe" id="indFrame"><div class="ist" id="indSt"></div></div><div class="iunder hn">Every industry that keeps America moving.</div></div>
       </section>
       <!-- 3 / EVERY WORRY, ANSWERED -->
@@ -2270,7 +2270,7 @@ function av(src,s,alt){return '<div class="av" style="width:'+s+'px;height:'+s+'
 var L=[['outer',152,'<div class="status hn" id="indStat"><i>'+CHK+'</i><span>Funded $140,000</span></div>'],['outer',120,pill('trucking','Trucking')],['outer',98,pill('construction','Construction')],['outer',76,av('https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20260926_044357_2b00f9ca-056c-423f-94a3-9c2ca49d917b.png',104,'Restaurant owner')],['outer',56,pill('restaurants','Restaurants')],['outer',36,pill('ecommerce','E-commerce')],['inner',130,pill('manufacturing','Manufacturing')],['inner',90,av('https://d8j0ntlcm91z4.cloudfront.net/user_3DSL63TGngiexHNYyHPnuPUiRZB/hf_20260926_044357_af026ef2-72d2-4d12-9c1b-8350f9e54b17.png',84,'Construction company owner')],['inner',58,pill('retail','Retail')],['inner',38,'<div class="check">'+CHK+'</div>']];
 var st=document.getElementById('indSt'),out='<svg class="arcs" width="1200" height="490" viewBox="0 0 1200 490"><path d="'+arc(R.outer)+'" stroke="rgba(255,255,255,.10)" stroke-width="2"/><path class="i" d="'+arc(R.inner)+'" stroke="rgba(255,255,255,.14)" stroke-width="3"/></svg>';
 L.forEach(function(x,i){out+='<div class="it" data-k="'+x[1]+'" style="'+pos(x[0],x[1])+';animation-delay:'+(.5+i*.07)+'s"><div class="fl" style="animation-duration:'+(4+(i%4)*.6)+'s;animation-delay:'+((i*.4)%2)+'s"><div class="sz">'+x[2]+'</div></div></div>'});
-out+='<div class="stats hn"><div style="animation-delay:.9s"><b class="mk" data-cu="$1B+">$0B+</b><span>Funded</span></div><div style="animation-delay:1.02s"><b data-cu="4h">0h</b><span>Fastest decision</span></div><div style="animation-delay:1.14s"><b data-cu="USA">USA</b><span>Nationwide</span></div></div>';
+out+='<div class="stats hn"><div style="animation-delay:.9s"><b class="mk indamt">$140K</b><span>Example funding</span></div><div style="animation-delay:1.02s"><b data-cu="4h">0h</b><span>Fastest decision</span></div><div style="animation-delay:1.14s"><b data-cu="USA">USA</b><span>Nationwide</span></div></div>';
 st.innerHTML=out;
 function arcSq(r,sx,maxY){var p=[];for(var a=180;a>=0;a-=2){var t=a*Math.PI/180,x=C.x+r*Math.cos(t)*sx,y=C.y-r*Math.sin(t);if(y<=maxY)p.push(x.toFixed(1)+' '+y.toFixed(1))}return 'M '+p.join(' L ')}
 var arcsEl=st.querySelector('svg.arcs'),arcP=arcsEl.querySelectorAll('path'),arcD=[arcP[0].getAttribute('d'),arcP[1].getAttribute('d')];
@@ -2281,7 +2281,7 @@ function countUp(el,v,delay){var m=v.match(/^([^\d]*)([\d.,]+)(.*)$/);if(!m){el.
 var started=false;function go(){if(started)return;started=true;sec.classList.add('go');st.querySelectorAll('[data-cu]').forEach(function(el,i){countUp(el,el.dataset.cu,900+i*120)})}
 if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)go()})},{threshold:.4}).observe(document.getElementById('indOrbit'))}else go();
 var rot=document.getElementById('indRot');IND.forEach(function(x,i){rot.insertAdjacentHTML('beforeend','<span style="transform:translateY('+(i?100:0)+'%);opacity:'+(i?0:1)+'">'+x[1]+'</span>')});
-var step=0;function sync(){var cur=step%IND.length;st.querySelectorAll('.pill').forEach(function(p){p.classList.toggle('on',p.dataset.k===IND[cur][0])});var s=document.querySelector('#indStat span');if(s)s.textContent='Funded '+IND[cur][2]}
+var step=0;function sync(){var cur=step%IND.length;st.querySelectorAll('.pill').forEach(function(p){p.classList.toggle('on',p.dataset.k===IND[cur][0])});var s=document.querySelector('#indStat span');if(s)s.textContent='Funded '+IND[cur][2];var am=st.querySelector('.indamt');if(am)am.textContent='$'+Math.round(parseInt(IND[cur][2].replace(/[^0-9]/g,''),10)/1000)+'K'}
 sync();setInterval(function(){if(document.hidden)return;step++;var n=IND.length,cur=step%n,prev=(step-1)%n;[].forEach.call(rot.children,function(s,i){s.style.transform='translateY('+(i===cur?0:i===prev?-100:100)+'%)';s.style.opacity=i===cur?1:0});sync()},2200);
 })();
 </script>
