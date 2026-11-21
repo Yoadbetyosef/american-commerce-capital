@@ -108,6 +108,10 @@ html[data-mx] .pgform .mxg{display:grid;grid-template-columns:minmax(0,.8fr) min
 .ddp .im.vid{position:relative;overflow:hidden;background:#E664B4}
 .ddp .im.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 
+/* top-bar Apply button in lime (restore pink: delete these two lines) */
+.pnav .cta{background:#D6FF3F;color:#17150f}
+.pnav .cta:hover{background:#c4ee2a}
+
 .mx{display:none}
 html[data-mx] #how,html[data-mx] #standard,html[data-mx] #why,html[data-mx] #eligibility,html[data-mx] #industries,html[data-mx] #reviews,html[data-mx] #people,html[data-mx] #faq,html[data-mx] #apply,html[data-mx] .closing{display:none!important}
 html[data-mx] .mx{display:block;position:relative;z-index:5;background:#fff;color:#17150f;font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;letter-spacing:-.02em;padding:clamp(70px,7vw,120px) 1.2vw 0;-webkit-text-size-adjust:100%}
