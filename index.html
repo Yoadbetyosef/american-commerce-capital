@@ -2641,5 +2641,45 @@ setTimeout(w,50);addEventListener('resize',w);if(document.fonts&&document.fonts.
 <div id="botedge" aria-hidden="true"></div>
 <script>addEventListener('load',function(){if(location.hash==='#apply'){var a=document.querySelector('nav.top .navcta');if(a)setTimeout(function(){a.click()},350)}});</script>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#apply"]');if(!a||e.defaultPrevented)return;var m=document.querySelector('.modal');if(m&&m.classList.contains('open'))return;var n=document.querySelector('nav.top .navcta');if(n&&a!==n){e.preventDefault();n.click()}});</script>
+<script id="fontlab">/* font lab: a private switch for trying fonts. Opens only with ?fonts in the address (visitors never see it). Restore: delete this script. */
+(function(){var Q=new URLSearchParams(location.search),K='accFontLab';
+if(Q.has('fonts')){try{localStorage.setItem(K+'On',Q.get('fonts')==='off'?'':'1')}catch(e){}}
+var on=false;try{on=!!localStorage.getItem(K+'On')}catch(e){on=Q.has('fonts')&&Q.get('fonts')!=='off'}
+if(!on)return;
+var MONO=['IBM Plex Mono','JetBrains Mono','Geist Mono','DM Mono','Space Mono','Roboto Mono','Red Hat Mono','Martian Mono','Fira Code','Courier Prime'],
+SANS=['IBM Plex Sans','Inter','Geist','DM Sans','Space Grotesk','Inter Tight'],SERIF=['IBM Plex Serif','Source Serif 4','Fraunces'];
+var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?'+MONO.concat(SANS,SERIF).map(function(f){return 'family='+f.replace(/ /g,'+')+':wght@400;500;600;700'}).join('&')+'&display=swap';document.head.appendChild(l);
+var H=document.documentElement,st={mono:'',lvl:1,head:'',body:''};try{var s=JSON.parse(localStorage.getItem(K)||'null');if(s)st=s}catch(e){}
+var css=document.createElement('style');css.textContent=
+'html[data-fx] [data-fr=mono]{font-family:var(--fxm),ui-monospace,Menlo,monospace!important}'+
+'html[data-fx][data-fxl="2"] [data-fr=ui],html[data-fx][data-fxl="3"] [data-fr=ui],html[data-fx][data-fxl="4"] [data-fr=ui]{font-family:var(--fxm),ui-monospace,monospace!important;letter-spacing:-.03em!important}'+
+'html[data-fx][data-fxl="3"] [data-fr=body],html[data-fx][data-fxl="4"] [data-fr=body]{font-family:var(--fxm),ui-monospace,monospace!important;letter-spacing:-.03em!important}'+
+'html[data-fxb]:not([data-fxl="3"]):not([data-fxl="4"]) [data-fr=body],html[data-fxb]:not([data-fxl="2"]):not([data-fxl="3"]):not([data-fxl="4"]) [data-fr=ui]{font-family:var(--fxb),Helvetica,Arial,sans-serif!important}'+
+'html[data-fx][data-fxl="4"] [data-fr=head]{font-family:var(--fxm),ui-monospace,monospace!important;font-stretch:100%!important;letter-spacing:-.06em!important;font-size-adjust:.39}'+
+'html[data-fxh]:not([data-fxl="4"]) [data-fr=head]{font-family:var(--fxh),Georgia,serif!important;font-stretch:100%!important;letter-spacing:-.035em!important;font-size-adjust:.42}'+
+'#fxp{position:fixed;z-index:2147483000;left:14px;bottom:14px;width:290px;max-width:calc(100vw - 28px);background:#17150f;color:#fff;border-radius:16px;padding:14px;font:500 13px/1.3 -apple-system,Helvetica,Arial,sans-serif;direction:rtl;box-shadow:0 10px 40px rgba(0,0,0,.35)}#fxp *{box-sizing:border-box;font:inherit;letter-spacing:0}#fxp b{font-weight:700}#fxp .t{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}#fxp .t button{background:none;border:0;color:#fff;cursor:pointer;font-size:16px;padding:0 4px}#fxp label{display:block;margin:9px 0 4px;color:#bdbdb4}#fxp select{width:100%;padding:8px;border-radius:9px;border:0;background:#fff;color:#17150f;direction:ltr}#fxp .lv{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}#fxp .lv button,#fxp .pr button{padding:8px 4px;border-radius:9px;border:1px solid #55554d;background:none;color:#fff;cursor:pointer}#fxp .lv button.on{background:#D6FF3F;color:#17150f;border-color:#D6FF3F}#fxp .pr{display:grid;grid-template-columns:1fr 1fr;gap:5px}#fxp .pr button{direction:ltr;font-size:12px}#fxp .o{margin-top:10px;padding:8px;border-radius:9px;background:#2a2823;direction:ltr;text-align:left;font:12px ui-monospace,Menlo,monospace;user-select:all;word-break:break-word}#fxp.min>*:not(.t){display:none}#fxp.min{width:auto}';
+document.head.appendChild(css);
+function tag(){var had=H.hasAttribute('data-fx'),a=['data-fx','data-fxb','data-fxh'],keep={};a.forEach(function(k){keep[k]=H.getAttribute(k);H.removeAttribute(k)});
+var n=document.body.querySelectorAll('*:not([data-fr]):not(script):not(style):not(svg):not(path)');
+for(var i=0;i<n.length;i++){var e=n[i];if(e.closest('#fxp'))continue;var own=false;for(var c=e.firstChild;c;c=c.nextSibling)if(c.nodeType===3&&c.nodeValue.trim()){own=true;break}
+if(!own&&!/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(e.tagName))continue;var cs=getComputedStyle(e),r='body';
+if(/ACC Mono|monospace/.test(cs.fontFamily))r='mono';else if(/^H[1-3]$/.test(e.tagName)||parseFloat(cs.fontStretch)<=80||e.closest('h1,h2,h3'))r='head';else if(e.closest('nav,button,.mxbtn,.pill,.go,.pscta,.a3,.cta,.bbbtn'))r='ui';
+e.setAttribute('data-fr',r)}
+a.forEach(function(k){if(keep[k]!==null)H.setAttribute(k,keep[k])})}
+function apply(){if(st.mono){H.setAttribute('data-fx','');H.style.setProperty('--fxm','"'+st.mono+'"')}else H.removeAttribute('data-fx');H.setAttribute('data-fxl',st.lvl);
+if(st.body){H.setAttribute('data-fxb','');H.style.setProperty('--fxb','"'+st.body+'"')}else H.removeAttribute('data-fxb');
+if(st.head){H.setAttribute('data-fxh','');H.style.setProperty('--fxh','"'+st.head+'"')}else H.removeAttribute('data-fxh');
+try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}
+var p=document.getElementById('fxp');if(!p)return;p.querySelector('#fxm').value=st.mono;p.querySelector('#fxb').value=st.body;p.querySelector('#fxh').value=st.head;
+p.querySelectorAll('.lv button').forEach(function(b){b.className=+b.dataset.l===+st.lvl?'on':''});
+p.querySelector('.o').textContent='mono: '+(st.mono||'current')+' | where: '+st.lvl+' | body: '+(st.body||'current')+' | headlines: '+(st.head||'current')}
+function opt(a,first){return '<option value="">'+first+'</option>'+a.map(function(f){return '<option>'+f+'</option>'}).join('')}
+var PRE=[['Current site','',1,'',''],['Plex bank','IBM Plex Mono',2,'IBM Plex Sans',''],['Plex + serif','IBM Plex Mono',2,'IBM Plex Sans','IBM Plex Serif'],['JetBrains tech','JetBrains Mono',2,'Inter',''],['Geist fintech','Geist Mono',2,'Geist',''],['DM soft','DM Mono',2,'DM Sans',''],['Space','Space Mono',2,'Space Grotesk','Space Grotesk'],['Mono text','IBM Plex Mono',3,'',''],['All mono','JetBrains Mono',4,'',''],['Typewriter','Courier Prime',3,'','Source Serif 4']];
+function ui(){var p=document.createElement('div');p.id='fxp';p.innerHTML='<div class="t"><b>מתג פונטים</b><span><button type="button" id="fxmin" title="מזער">–</button><button type="button" id="fxx" title="סגור">×</button></span></div><div class="pr">'+PRE.map(function(x,i){return '<button type="button" data-p="'+i+'">'+x[0]+'</button>'}).join('')+'</div><label>פונט מונו</label><select id="fxm">'+opt(MONO,'ACC Mono (current)')+'</select><label>איפה המונו מופיע</label><div class="lv"><button type="button" data-l="1">תוויות</button><button type="button" data-l="2">+כפתורים</button><button type="button" data-l="3">+טקסט</button><button type="button" data-l="4">הכול</button></div><label>פונט טקסט</label><select id="fxb">'+opt(SANS,'ACC Grotesk (current)')+'</select><label>פונט כותרות</label><select id="fxh">'+opt(SERIF.concat(SANS,MONO.slice(0,4)),'ACC Grotesk (current)')+'</select><div class="o"></div>';
+document.body.appendChild(p);
+p.addEventListener('change',function(e){if(e.target.id==='fxm'){st.mono=e.target.value}if(e.target.id==='fxb')st.body=e.target.value;if(e.target.id==='fxh')st.head=e.target.value;apply()});
+p.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.dataset.l){st.lvl=+b.dataset.l;if(!st.mono)st.mono=MONO[0];apply()}else if(b.dataset.p){var x=PRE[+b.dataset.p];st={mono:x[1],lvl:x[2],body:x[3],head:x[4]};apply()}else if(b.id==='fxmin')p.classList.toggle('min');else if(b.id==='fxx'){try{localStorage.removeItem(K+'On')}catch(e){}st={mono:'',lvl:1,head:'',body:''};apply();p.remove()}})}
+function go(){tag();ui();apply();var t;new MutationObserver(function(){clearTimeout(t);t=setTimeout(tag,400)}).observe(document.body,{childList:true,subtree:true})}
+if(document.readyState==='complete')go();else addEventListener('load',go);window.__fx={set:function(o){st=o;apply()},tag:tag}})();</script>
 </body>
 </html>
