@@ -101,6 +101,10 @@ html[data-mx] .pgform .mxg{display:grid;grid-template-columns:minmax(0,.8fr) min
 .pnav .brand .tmk{display:inline-block;font-family:Arial,Helvetica,sans-serif;font-stretch:100%;font-weight:700;font-size:.58em;line-height:1;vertical-align:top;margin-left:.16em;letter-spacing:.02em}
 @media(max-width:980px){.pnav .brand .tmk{font-size:.72em;margin-left:.2em}}
 
+.ddp.side .g{grid-template-columns:1.05fr .7fr .62fr}
+.ddp.side .im{order:3}
+.ddp.side .r{order:2}
+
 .mx{display:none}
 html[data-mx] #how,html[data-mx] #standard,html[data-mx] #why,html[data-mx] #eligibility,html[data-mx] #industries,html[data-mx] #reviews,html[data-mx] #people,html[data-mx] #faq,html[data-mx] #apply,html[data-mx] .closing{display:none!important}
 html[data-mx] .mx{display:block;position:relative;z-index:5;background:#fff;color:#17150f;font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;letter-spacing:-.02em;padding:clamp(70px,7vw,120px) 1.2vw 0;-webkit-text-size-adjust:100%}
