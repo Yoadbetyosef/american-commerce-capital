@@ -448,6 +448,10 @@ footer .w{padding-top:52px;padding-bottom:40px}
 .dd-p li[aria-selected=true]::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 1px rgba(11,27,58,.3)}
 .dd-p li.ph{color:var(--mid)}
 .dd-p::-webkit-scrollbar{width:8px}.dd-p::-webkit-scrollbar-thumb{background:#D9E0EC;border-radius:9px}
+
+/* the dropdown closes as soon as a link in the header is clicked, and stays closed until the pointer leaves the header */
+.nav.cl .mega{display:none!important}
+.nav.cl li>a{border-bottom-color:transparent!important;color:inherit!important}
 </style></head>
 <body>
 
@@ -649,4 +653,5 @@ f.addEventListener('submit',function(e){e.preventDefault();if(busy)return;if(!va
  var p={amount:data.amount,revenue:data.revenue,tib:data.tib,use:data.use,industry:f.industry.value,business:f.business.value.trim(),name:f.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),contact:data.contact,consent:true,consentVersion:'site-v1',submissionId:sid,landingPage:(cm?location.origin+location.pathname+'?via=calculator&estimate='+cm.est+'&revenue='+cm.rev+'&credit='+cm.cs+'&type='+encodeURIComponent(cm.type):location.href).slice(0,1000),submittedAt:new Date().toISOString(),website:f.website.value};
  fetch(URL_,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)}).then(function(r){busy=false;btn.disabled=false;btn.textContent=lb;if(r.status===201)done();else err(3,r.status===429?'Too many attempts. Please wait a minute and try again.':'We could not send your application. Please try again or call us.')}).catch(function(){busy=false;btn.disabled=false;btn.textContent=lb;err(3,'We could not send your application. Please check your connection and try again.')})});
 })();</script>
+<script>(function(){var n=document.querySelector('.nav');if(!n)return;n.addEventListener('click',function(e){if(e.target.closest('a[href]')){n.classList.add('cl');if(document.activeElement&&document.activeElement.blur)document.activeElement.blur()}});n.addEventListener('mouseleave',function(){n.classList.remove('cl')});n.addEventListener('keydown',function(e){if(e.key==='Tab')n.classList.remove('cl')})})();</script>
 </body></html>
