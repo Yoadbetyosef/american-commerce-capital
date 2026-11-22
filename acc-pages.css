@@ -125,6 +125,9 @@ html[data-mx] .pgform .mxg{display:grid;grid-template-columns:minmax(0,.8fr) min
 .ddp .l .pl{display:grid;grid-template-columns:1fr 1fr;column-gap:22px}
 .ddp .l .pl a{font-size:16px;padding:11px 0}
 
+/* logo files in the top bar: wide on desktop, stacked on mobile (restore the text logo: delete this block) */
+.pnav .brand{font-size:0!important;line-height:0!important;letter-spacing:0!important;display:block!important;flex:none;width:clamp(390px,30vw,470px)!important;aspect-ratio:2102/94;background:currentColor;-webkit-mask:url(img/acc-logo-wide.png) left center/contain no-repeat;mask:url(img/acc-logo-wide.png) left center/contain no-repeat}.pnav .brand>*{display:none!important}@media(max-width:1320px){.pnav .brand{width:116px!important;aspect-ratio:1215/519;-webkit-mask-image:url(img/acc-logo-stack.png);mask-image:url(img/acc-logo-stack.png)}}@media(max-width:980px){.pnav .brand{width:106px!important}}
+
 .mx{display:none}
 html[data-mx] #how,html[data-mx] #standard,html[data-mx] #why,html[data-mx] #eligibility,html[data-mx] #industries,html[data-mx] #reviews,html[data-mx] #people,html[data-mx] #faq,html[data-mx] #apply,html[data-mx] .closing{display:none!important}
 html[data-mx] .mx{display:block;position:relative;z-index:5;background:#fff;color:#17150f;font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;letter-spacing:-.02em;padding:clamp(70px,7vw,120px) 1.2vw 0;-webkit-text-size-adjust:100%}
