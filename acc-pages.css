@@ -112,6 +112,19 @@ html[data-mx] .pgform .mxg{display:grid;grid-template-columns:minmax(0,.8fr) min
 .pnav .cta{background:#D6FF3F;color:#17150f}
 .pnav .cta:hover{background:#c4ee2a}
 
+/* product list in the Financing Solutions dropdown */
+.ddp .l small.ph{display:block;padding-top:14px;border-top:1px solid rgba(23,21,15,.16);font-family:'ACC Mono',ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:rgba(23,21,15,.7)}
+.ddp .l a.all{padding:12px 0 18px;border-top:0;font-weight:700;font-size:17px}
+.ddp .l a.all::after{content:" →"}
+.ddp .l a.all:hover{text-decoration:underline;text-underline-offset:3px}
+.ddp .l .pl a{display:flex;align-items:center;gap:14px;padding:13px 0;font-weight:600;font-size:17px}
+.ddp .l .pl svg{flex:none;width:22px;height:22px;fill:none;stroke:#364B75;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ddp .l .pl a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* eight products in two columns */
+.ddp .l .pl{display:grid;grid-template-columns:1fr 1fr;column-gap:22px}
+.ddp .l .pl a{font-size:16px;padding:11px 0}
+
 .mx{display:none}
 html[data-mx] #how,html[data-mx] #standard,html[data-mx] #why,html[data-mx] #eligibility,html[data-mx] #industries,html[data-mx] #reviews,html[data-mx] #people,html[data-mx] #faq,html[data-mx] #apply,html[data-mx] .closing{display:none!important}
 html[data-mx] .mx{display:block;position:relative;z-index:5;background:#fff;color:#17150f;font-family:'ACC Grotesk','Helvetica Neue',Arial,sans-serif;letter-spacing:-.02em;padding:clamp(70px,7vw,120px) 1.2vw 0;-webkit-text-size-adjust:100%}
