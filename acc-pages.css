@@ -441,6 +441,11 @@ html[data-mxfoot=white] .mxfo{background:#fff!important}
 .fbh .art.ph i:nth-child(1){width:34%;height:34%;left:-9%;top:-7%;right:auto;background:rgba(141,169,219,.38)}
 .fbh .art.ph i:nth-of-type(2){width:24%;height:24%;right:-7%;bottom:-6%;left:auto;top:auto;background:#D6FF3F;border-radius:22px}
 .fbh .art.ph .rt{left:-9%;bottom:7%}
+/* logo mark in the lime square, top square removed (restore: delete the next three rules) */
+.fbh .art.ph i:nth-child(1){display:none}
+.fbh .art i.lg{display:grid;place-items:center}
+.fbh .art i.lg svg{width:58%;height:auto;fill:#17150f}
+.fbh .art:not(.ph) i.lg svg{display:none}
 .pgacc .g:not(:has(.im)){grid-template-columns:1fr!important}
 @media(max-width:900px){.fbh{padding:calc(70px + 44px) 0 52px}.fbh .w{grid-template-columns:1fr}.fbh .art{display:none}.fbh .art.ph{display:block;max-width:none;width:86%;margin:8px auto 14px}.fbh .art.ph img{border-radius:32px}.fbh .art.ph .rt{left:-6%}.fbh .w,.fbst .w,.fbs .w,.fbcta .w{padding-left:20px;padding-right:20px}.fbbtn{height:54px;flex:1 1 auto;justify-content:center}.fbq .fbbtn{flex:none}.fbst .w,.fbst .w.c4{grid-template-columns:1fr 1fr;row-gap:26px;padding-top:30px;padding-bottom:30px}.fbst .w.c3{grid-template-columns:1fr}.fbst .w.c3>div{border-left:0;border-top:1px solid rgba(23,21,15,.12);padding-top:22px}.fbst .w.c3>div:first-child{border-top:0;padding-top:0}.fbst .w.c4>div:nth-child(3){border-left:0}.fb2,.fbben,.fbpc,.fbck,.fbg3,.fblk,.fbstep{grid-template-columns:1fr}.fblk.s,.fbpg{grid-template-columns:1fr 1fr;gap:12px}.fblk.s a,.fbpg a{padding:18px}.fbq .q3{grid-template-columns:1fr;gap:18px}.fbq .q3>div{border-left:0}.fbfaq details>div{padding-right:0}.fbt{min-width:560px}}
 @media(max-width:520px){.fbpg{grid-template-columns:1fr}}
